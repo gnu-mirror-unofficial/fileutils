@@ -4,7 +4,7 @@
 @settitle GNU Core Utilities Frequently Asked Questions
 @c %**end of header
 
-@c $Revision: 1.14 $ $Date: 2002/07/17 07:23:38 $
+@c $Revision: 1.15 $ $Date: 2002/10/13 16:34:41 $
 
 @node Top
 @top
@@ -263,6 +263,12 @@ were severely effected.
 Include as small of a test case as you can manage to create that will
 allow others to recreate the problem.  If the problem cannot be
 recreated then it is very difficult to diagnose or fix.
+
+Confused by all of this?  Don't worry.  We all start somewhere.  Here
+is a pointer to an article written by Eric S. Raymond on how to ask
+good questions.
+
+@uref{http://www.tuxedo.org/~esr/faqs/smart-questions.html}
 
 Patches to the source code are always appreciated.  But even if you do
 not feel comfortable at the source code level reports of bugs are always
