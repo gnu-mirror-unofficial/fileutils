@@ -4,7 +4,7 @@
 @settitle GNU Core Utilities Frequently Asked Questions
 @c %**end of header
 
-@c $Revision: 1.15 $ $Date: 2002/10/13 16:34:41 $
+@c $Revision: 1.16 $ $Date: 2002/10/13 17:24:59 $
 
 @node Top
 @top
@@ -599,16 +599,49 @@ It is extremely unlikely that you will be able to recover a file from
 the filesystem after you have removed it.  It depends upon your
 operating system and the filesystem used with it.  The disk blocks
 storing the file would have been freed and very likely reused by other
-files.  This is especially true on an active file system.
+files.  This is especially true on an active file system.  However,
+having said that disclaimer, it is frequently possible to recover
+deleted files.
 
-Matt Schalit <mschalit@@pacbell.net>
+Matt Schalit <mschalit at pacbell dot net>
 @uref{
 http://mail.gnu.org/pipermail/bug-fileutils/2002-January/002361.html
-, suggests}
+, suggests in a message to the list}
 that the user may want to look into The Coroner's Toolkit, unrm, and
 lazarus.
 
 @uref{http://www.porcupine.org/forensics/tct.html}
+
+Ciaran O'Riordan <coriordan at compsoc dot com> wrote suggesting that
+users should look at the programs 'recover' and 'gtkrecover'.  The
+latter being a gui interface for the former.  The tool has been used
+with great success when O'Riordan's 700 MB music collection was
+deleted.  It is GPL and is a Debian package.  It is ext2 specific but
+is available for both GNU/Linux and GNU/Hurd.  Also, the 'recover'
+homepage has a link to a manual way to retrieve deleted files.
+
+@uref{http://recover.sourceforge.net/linux/recover/}
+
+On Debian systems:
+@example
+  apt-get install recover
+@end example
+
+See also ``Linux Ext2fs Undeletion mini-HOWTO'' by Aaron Crane at
+@uref{http://www.tldp.org/HOWTO/mini/Ext2fs-Undeletion.html}.  This
+contains very useful information about this topic.
+
+You don't want your files to be recovered and you want them to stay
+deleted?  The GNU core utilities include a utility called @code{shred}
+which may be of some use to prevent it.  Read the documentation on
+that program for more details especially the exceptions section where
+shred does not work.  This operation does not work on journaled
+filesystems.
+
+@example
+  info shred
+@end example
+
 
 @c ---------------------------------------------------------------------------
 @node Why don't the utilities have built in directory recursion?

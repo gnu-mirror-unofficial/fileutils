@@ -656,14 +656,44 @@ Up:<a rel=up href="#Top">Top</a>
 the filesystem after you have removed it.  It depends upon your
 operating system and the filesystem used with it.  The disk blocks
 storing the file would have been freed and very likely reused by other
-files.  This is especially true on an active file system.
+files.  This is especially true on an active file system.  However,
+having said that disclaimer, it is frequently possible to recover
+deleted files.
 
-<p>Matt Schalit &lt;mschalit@pacbell.net&gt;
-<a href="http://mail.gnu.org/pipermail/bug-fileutils/2002-January/002361.html">suggests</a>
+<p>Matt Schalit &lt;mschalit at pacbell dot net&gt;
+<a href="http://mail.gnu.org/pipermail/bug-fileutils/2002-January/002361.html">suggests in a message to the list</a>
 that the user may want to look into The Coroner's Toolkit, unrm, and
 lazarus.
 
 <a href="http://www.porcupine.org/forensics/tct.html">http://www.porcupine.org/forensics/tct.html</a>
+
+<p>Ciaran O'Riordan &lt;coriordan at compsoc dot com&gt; wrote suggesting that
+users should look at the programs 'recover' and 'gtkrecover'.  The
+latter being a gui interface for the former.  The tool has been used
+with great success when O'Riordan's 700 MB music collection was
+deleted.  It is GPL and is a Debian package.  It is ext2 specific but
+is available for both GNU/Linux and GNU/Hurd.  Also, the 'recover'
+homepage has a link to a manual way to retrieve deleted files.
+
+<a href="http://recover.sourceforge.net/linux/recover/">http://recover.sourceforge.net/linux/recover/</a>
+
+<p>On Debian systems:
+<br><pre>  apt-get install recover
+</pre>
+
+<p>See also "Linux Ext2fs Undeletion mini-HOWTO" by Aaron Crane at
+<a href="http://www.tldp.org/HOWTO/mini/Ext2fs-Undeletion.html">http://www.tldp.org/HOWTO/mini/Ext2fs-Undeletion.html</a>.  This
+contains very useful information about this topic.
+
+<p>You don't want your files to be recovered and you want them to stay
+deleted?  The GNU core utilities include a utility called <code>shred</code>
+which may be of some use to prevent it.  Read the documentation on
+that program for more details especially the exceptions section where
+shred does not work.  This operation does not work on journaled
+filesystems.
+
+<br><pre>  info shred
+</pre>
 
 <p><hr>
 Node:<a name="Why%20don't%20the%20utilities%20have%20built%20in%20directory%20recursion%3f">Why don't the utilities have built in directory recursion?</a>,
