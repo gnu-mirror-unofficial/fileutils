@@ -69,6 +69,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 <li><a href="#I%20have%20a%20file%20called%20'--help'">I have a file called '--help'</a>: 
 <li><a href="#I%20have%20a%20file%20'-f'%20and%20it%20affects%20rm.">I have a file '-f' and it affects rm.</a>: 
 <li><a href="#Why%20doesn't%20rm%20-r%20*.pattern%20recurse%20like%20it%20should%3f">Why doesn't rm -r *.pattern recurse like it should?</a>: 
+<li><a href="#I%20used%20rm%20to%20remove%20a%20file.%20How%20can%20I%20get%20it%20back%20now%3f">I used rm to remove a file.  How can I get it back now?</a>: 
 <li><a href="#Why%20don't%20the%20utilities%20have%20built%20in%20directory%20recursion%3f">Why don't the utilities have built in directory recursion?</a>: 
 <li><a href="#ls%20-d%20does%20not%20list%20directories!">ls -d does not list directories!</a>: 
 <li><a href="#ls%20-a%20*%20does%20not%20list%20dot%20files">ls -a * does not list dot files</a>: 
@@ -512,7 +513,7 @@ do one of the following:
 
 <p><hr>
 Node:<a name="Why%20doesn't%20rm%20-r%20*.pattern%20recurse%20like%20it%20should%3f">Why doesn't rm -r *.pattern recurse like it should?</a>,
-Next:<a rel=next href="#Why%20don't%20the%20utilities%20have%20built%20in%20directory%20recursion%3f">Why don't the utilities have built in directory recursion?</a>,
+Next:<a rel=next href="#I%20used%20rm%20to%20remove%20a%20file.%20How%20can%20I%20get%20it%20back%20now%3f">I used rm to remove a file. How can I get it back now?</a>,
 Previous:<a rel=previous href="#I%20have%20a%20file%20'-f'%20and%20it%20affects%20rm.">I have a file '-f' and it affects rm.</a>,
 Up:<a rel=up href="#Top">Top</a>
 <br>
@@ -623,9 +624,31 @@ equivalent to the following question which might be easier to understand
 what is going on.
 
 <p><hr>
+Node:<a name="I%20used%20rm%20to%20remove%20a%20file.%20How%20can%20I%20get%20it%20back%20now%3f">I used rm to remove a file. How can I get it back now?</a>,
+Next:<a rel=next href="#Why%20don't%20the%20utilities%20have%20built%20in%20directory%20recursion%3f">Why don't the utilities have built in directory recursion?</a>,
+Previous:<a rel=previous href="#Why%20doesn't%20rm%20-r%20*.pattern%20recurse%20like%20it%20should%3f">Why doesn't rm -r *.pattern recurse like it should?</a>,
+Up:<a rel=up href="#Top">Top</a>
+<br>
+
+<h1>I used rm to remove a file.  How can I get it back now?</h1>
+
+<p>It is extremely unlikely that you will be able to recover a file from
+the filesystem after you have removed it.  It depends upon your
+operating system and the filesystem used with it.  The disk blocks
+storing the file would have been freed and very likely reused by other
+files.  This is especially true on an active file system.
+
+<p>Matt Schalit &lt;mschalit@pacbell.net&gt;
+<a href="http://mail.gnu.org/pipermail/bug-fileutils/2002-January/002361.html">suggests</a>
+that the user may want to look into The Coroner's Toolkit, unrm, and
+lazarus.
+
+<a href="http://www.porcupine.org/forensics/tct.html">http://www.porcupine.org/forensics/tct.html</a>
+
+<p><hr>
 Node:<a name="Why%20don't%20the%20utilities%20have%20built%20in%20directory%20recursion%3f">Why don't the utilities have built in directory recursion?</a>,
 Next:<a rel=next href="#ls%20-d%20does%20not%20list%20directories!">ls -d does not list directories!</a>,
-Previous:<a rel=previous href="#Why%20doesn't%20rm%20-r%20*.pattern%20recurse%20like%20it%20should%3f">Why doesn't rm -r *.pattern recurse like it should?</a>,
+Previous:<a rel=previous href="#I%20used%20rm%20to%20remove%20a%20file.%20How%20can%20I%20get%20it%20back%20now%3f">I used rm to remove a file. How can I get it back now?</a>,
 Up:<a rel=up href="#Top">Top</a>
 <br>
 

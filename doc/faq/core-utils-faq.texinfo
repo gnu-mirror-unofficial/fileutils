@@ -4,7 +4,7 @@
 @settitle GNU Core Utilities Frequently Asked Questions
 @c %**end of header
 
-@c $Revision: 1.7 $ $Date: 2002/01/22 09:29:13 $
+@c $Revision: 1.8 $ $Date: 2002/02/09 18:34:58 $
 
 @node Top, Three packages are confusing!, (dir), (dir)
 @top
@@ -62,6 +62,7 @@ An online version is available at
 * I have a file called '--help'::
 * I have a file '-f' and it affects rm.::
 * Why doesn't rm -r *.pattern recurse like it should?::
+* I used rm to remove a file.  How can I get it back now?::
 * Why don't the utilities have built in directory recursion?::
 * ls -d does not list directories!::
 * ls -a * does not list dot files::
@@ -460,7 +461,7 @@ do one of the following:
 See the previous question with regards to a filename @file{-i}.
 
 @c ---------------------------------------------------------------------------
-@node Why doesn't rm -r *.pattern recurse like it should?, Why don't the utilities have built in directory recursion?, I have a file '-f' and it affects rm., Top
+@node Why doesn't rm -r *.pattern recurse like it should?, I used rm to remove a file.  How can I get it back now?, I have a file '-f' and it affects rm., Top
 @chapter Why doesn't rm -r *.pattern recurse like it should?
 
 This question is asked a number of ways:
@@ -572,7 +573,26 @@ equivalent to the following question which might be easier to understand
 what is going on.
 
 @c ---------------------------------------------------------------------------
-@node  Why don't the utilities have built in directory recursion?, ls -d does not list directories!, Why doesn't rm -r *.pattern recurse like it should?, Top
+@node  I used rm to remove a file.  How can I get it back now?, Why don't the utilities have built in directory recursion?, Why doesn't rm -r *.pattern recurse like it should?, Top
+@chapter I used rm to remove a file.  How can I get it back now?
+
+It is extremely unlikely that you will be able to recover a file from
+the filesystem after you have removed it.  It depends upon your
+operating system and the filesystem used with it.  The disk blocks
+storing the file would have been freed and very likely reused by other
+files.  This is especially true on an active file system.
+
+Matt Schalit <mschalit@@pacbell.net>
+@uref{
+http://mail.gnu.org/pipermail/bug-fileutils/2002-January/002361.html
+, suggests}
+that the user may want to look into The Coroner's Toolkit, unrm, and
+lazarus.
+
+@uref{http://www.porcupine.org/forensics/tct.html}
+
+@c ---------------------------------------------------------------------------
+@node  Why don't the utilities have built in directory recursion?, ls -d does not list directories!, I used rm to remove a file.  How can I get it back now?, Top
 @chapter Why don't the utilities have built in directory recursion?
 
 @c FIXME: Need to punch up this section a lot.  It is in serious need.
