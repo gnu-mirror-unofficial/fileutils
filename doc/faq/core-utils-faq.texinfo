@@ -4,7 +4,7 @@
 @settitle GNU Core Utilities Frequently Asked Questions
 @c %**end of header
 
-@c $Revision: 1.17 $ $Date: 2002/11/03 01:33:41 $
+@c $Revision: 1.18 $ $Date: 2002/11/03 01:36:12 $
 
 @node Top
 @top
@@ -348,16 +348,14 @@ mostly threefold.
 
 @enumerate
 @item
-People have used this to avoid disk space quota restrictions.  Give the
-file to someone either with disk quota to spare or without any quota
-restrictions, like root.  You can always copy the files back and then
-you own them again.  This effectively defeats any quota system if
-allowed.
-
-Alto, you can deny someone else service with a denial of service
-attack by using all of their quota until they cannot create any files.
-You use up their quote by chowning files to them someplace where they
-cannot find them.
+People have used this to avoid disk space quota restrictions.  Give
+the file to someone either with disk quota to spare or without any
+quota restrictions, like root.  You can always copy the files back and
+then you own them again.  This effectively defeats any quota system if
+allowed.  Also, you can deny someone else service with a denial of
+service attack by using all of their quota until they cannot create
+any files.  You use up their quote by chowning files to them someplace
+where they cannot find them.
 
 @item
 A user can create files that they cannot remove.  With the old semantics

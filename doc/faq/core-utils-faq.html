@@ -389,18 +389,16 @@ operating system.
 mostly threefold.
 
 <ol type=1 start=1>
-</p><li>People have used this to avoid disk space quota restrictions.  Give the
-file to someone either with disk quota to spare or without any quota
-restrictions, like root.  You can always copy the files back and then
-you own them again.  This effectively defeats any quota system if
-allowed.
+</p><li>People have used this to avoid disk space quota restrictions.  Give
+the file to someone either with disk quota to spare or without any
+quota restrictions, like root.  You can always copy the files back and
+then you own them again.  This effectively defeats any quota system if
+allowed.  Also, you can deny someone else service with a denial of
+service attack by using all of their quota until they cannot create
+any files.  You use up their quote by chowning files to them someplace
+where they cannot find them.
 
-<p>Alto, you can deny someone else service with a denial of service
-attack by using all of their quota until they cannot create any files. 
-You use up their quote by chowning files to them someplace where they
-cannot find them.
-
-</p><li>A user can create files that they cannot remove.  With the old semantics
+<li>A user can create files that they cannot remove.  With the old semantics
 it was possible for normal users to create situations that only the
 superuser could fix.  Such as creating a non-writable directory of files
 and then giving the ownership away.  Since they no longer own the files
