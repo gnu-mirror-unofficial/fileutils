@@ -4,7 +4,7 @@
 @settitle GNU Core Utilities Frequently Asked Questions
 @c %**end of header
 
-@c $Revision: 1.19 $ $Date: 2003/04/01 06:42:59 $
+@c $Revision: 1.20 $ $Date: 2003/04/01 07:12:11 $
 
 @node Top
 @top
@@ -980,6 +980,7 @@ However, those utilities are also built into most shells in order to
 improve the speed performance.
 
 @c ---------------------------------------------------------------------------
+@anchor{sort-vs-locale}
 @node Sort does not sort in normal order!
 @chapter Sort does not sort in normal order!
 
@@ -1030,6 +1031,7 @@ variables with regards to sort.
 @uref{http://www.unix-systems.org/single_unix_specification_v2/xcu/sort.html}
 
 @c ---------------------------------------------------------------------------
+@anchor{ls-sort-vs-locale}
 @node The ls command is not listing files in a normal order!
 @chapter The ls command is not listing files in a normal order!
 
