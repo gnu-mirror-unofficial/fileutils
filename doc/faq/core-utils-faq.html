@@ -1,0 +1,1042 @@
+<html lang="en"><head>
+<title>GNU Core Utilities Frequently Asked Questions</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name=description content="GNU Core Utilities Frequently Asked Questions">
+<meta name=generator content="makeinfo 4.0">
+<link href="http://texinfo.org/" rel=generator-home>
+</head><body>
+
+<p><hr>
+Node:<a name="Top">Top</a>,
+Next:<a rel=next href="#Three%20packages%20are%20confusing!">Three packages are confusing!</a>,
+Previous:<a rel=previous href="#(dir)">(dir)</a>,
+Up:<a rel=up href="#(dir)">(dir)</a>
+<br>
+
+<h1></h1>
+
+<h1>GNU Core Utilities Frequently Asked Questions</h1>
+
+<p>Welcome to the GNU Core Utililities FAQ.  This document answers the most
+frequently asked questions about the GNU core utilities.
+
+<p>If you have a question that is not answered in this FAQ then please
+check the mailing list archives.  If you find a useful question and
+answer please send a message to the bug list and I will add it to the
+FAQ so that this document can be improved.  If you still don't find a
+suitable answer, consider posting the question to the bug lists.
+
+<p>It is possible that replacing this document, or perhaps in addition to
+it, that we might implement a
+<a href="http://www.usenix.org/publications/login/1998-6/faq.html">FAQ-o-matic</a>
+type system.  I am interested in any comments you might have on this
+topic.
+
+<p>This FAQ was written by Bob Proulx
+<a href="mailto:bob@proulx.com">&lt;bob@proulx.com&gt;</a> as an amalgamation of
+the many questions asked and answered on the bug lists.
+
+<p>Copyright (C) 2001 Free Software Foundation
+
+<p>This document is free documentation; you can redistribute it and/or
+modify it under the terms of the GNU General Public License as published
+by the Free Software Foundation; either version 2 of the License, or (at
+your option) any later version.
+
+<p>This document and any included programs in the document are distributed
+in the hope that they will be useful, but WITHOUT ANY WARRANTY; without
+even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+PURPOSE.  See the GNU General Public License for more details.
+
+<p>You should have received a copy of the GNU General Public License along
+with this program; if not, write to the Free Software Foundation, Inc.,
+59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.
+
+<p>An online version is available at
+<a href="http://www.gnu.org/licenses/licenses.html">http://www.gnu.org/licenses/licenses.html</a>.
+
+<ul>
+<li><a href="#Three%20packages%20are%20confusing!">Three packages are confusing!</a>: 
+<li><a href="#Where%20can%20I%20get%20more%20information%20about%20GNU%20Core%20Utils%3f">Where can I get more information about GNU Core Utils?</a>: 
+<li><a href="#Where%20can%20I%20get%20the%20latest%20version%20of%20GNU%20fileutils%3f">Where can I get the latest version of GNU fileutils?</a>: 
+<li><a href="#How%20do%20I%20add%20a%20question%20to%20the%20FAQ%3f">How do I add a question to the FAQ?</a>: 
+<li><a href="#How%20do%20I%20report%20a%20bug%3f">How do I report a bug?</a>: 
+<li><a href="#I%20use%20the%20Cygwin%20port%20and%20I%20have%20a%20problem.">I use the Cygwin port and I have a problem.</a>: 
+<li><a href="#Why%20can%20only%20root%20chown%20files%3f">Why can only root chown files?</a>: 
+<li><a href="#chown%20fails%20when%20the%20username%20contains%20a%20'.'%20in%20it.">chown fails when the username contains a '.' in it.</a>: 
+<li><a href="#How%20do%20I%20remove%20files%20that%20start%20with%20a%20'-'%20such%20as%20'-i'%3f">How do I remove files that start with a '-' such as '-i'?</a>: 
+<li><a href="#I%20have%20a%20file%20called%20'--help'">I have a file called '--help'</a>: 
+<li><a href="#I%20have%20a%20file%20'-f'%20and%20it%20affects%20rm.">I have a file '-f' and it affects rm.</a>: 
+<li><a href="#Why%20doesn't%20rm%20-r%20*.pattern%20recurse%20like%20it%20should%3f">Why doesn't rm -r *.pattern recurse like it should?</a>: 
+<li><a href="#Why%20don't%20the%20utilities%20have%20built%20in%20directory%20recursion%3f">Why don't the utilities have built in directory recursion?</a>: 
+<li><a href="#ls%20-d%20does%20not%20list%20directories!">ls -d does not list directories!</a>: 
+<li><a href="#Argument%20list%20too%20long">Argument list too long</a>: 
+<li><a href="#I%20am%20trying%20to%20compile%20a%20C%20program%20...">I am trying to compile a C program ...</a>: 
+<li><a href="#I%20am%20having%20a%20problem%20with%20kill">I am having a problem with kill</a>: 
+<li><a href="#Sort%20does%20not%20sorting%20in%20normal%20order!">Sort does not sorting in normal order!</a>: 
+<li><a href="#The%20ls%20command%20is%20not%20listing%20files%20in%20a%20normal%20order!">The ls command is not listing files in a normal order!</a>: 
+<li><a href="#The%20date%20command%20is%20not%20working%20right.">The date command is not working right.</a>: 
+<li><a href="#ln%20-s%20did%20not%20link%20my%20files%20together">ln -s did not link my files together</a>: 
+<li><a href="#How%20do%20I%20change%20the%20ownership%20or%20permissions%20of%20a%20symlink%3f">How do I change the ownership or permissions of a symlink?</a>: 
+<li><a href="#Value%20too%20large%20for%20defined%20data%20type">Value too large for defined data type</a>: 
+<li><a href="#Tar%20created%20a%20Large%20File%20but%20I%20can't%20remove%20it.">Tar created a Large File but I can't remove it.</a>: 
+</ul>
+
+<p><hr>
+Node:<a name="Three%20packages%20are%20confusing!">Three packages are confusing!</a>,
+Next:<a rel=next href="#Where%20can%20I%20get%20more%20information%20about%20GNU%20Core%20Utils%3f">Where can I get more information about GNU Core Utils?</a>,
+Previous:<a rel=previous href="#Top">Top</a>,
+Up:<a rel=up href="#Top">Top</a>
+<br>
+
+<h1>Three packages are confusing!</h1>
+
+<p>Together the three packages combined implement a core set of GNU
+utilities.  Hereafter in this document we will refer to them as the core
+utilities without further enumeration.  But if you know the path or mail
+address of one utilities you can transform it into the other utility
+name with no difficulty.
+
+<dl>
+<dt><a href="http://www.gnu.org/software/fileutils/">http://www.gnu.org/software/fileutils/</a>
+<dd>The official <code>fileutils</code> home page.
+
+<br><dt><a href="http://www.gnu.org/software/sh-utils/">http://www.gnu.org/software/sh-utils/</a>
+<dd>The official <code>sh-utils</code> home page.
+
+<br><dt><a href="http://www.gnu.org/software/textutils/">http://www.gnu.org/software/textutils/</a>
+<dd>The official <code>textutils</code> home page. 
+</dl>
+
+<p><hr>
+Node:<a name="Where%20can%20I%20get%20more%20information%20about%20GNU%20Core%20Utils%3f">Where can I get more information about GNU Core Utils?</a>,
+Next:<a rel=next href="#Where%20can%20I%20get%20the%20latest%20version%20of%20GNU%20fileutils%3f">Where can I get the latest version of GNU fileutils?</a>,
+Previous:<a rel=previous href="#Three%20packages%20are%20confusing!">Three packages are confusing!</a>,
+Up:<a rel=up href="#Top">Top</a>
+<br>
+
+<h1>Where can I get more information about GNU Core Utils?</h1>
+
+<p>The online <code>info</code> documentation is always the most up to date
+source of information.  It should always be consulted first for the most
+up to date information on your particular installation.  Here are
+example commands to invoke <code>info</code> to browse the documentation.
+
+<pre>    info File
+    info Shell
+    info Text
+</pre>
+
+<p>Please browse the mailing list archives.  It is possible, even likely,
+that your question has been asked before.  You might find just the
+information you were looking for.  Many questions are asked here and at
+least a few are answered.
+
+<dl>
+<dt><a href="http://mail.gnu.org/pipermail/bug-fileutils/">http://mail.gnu.org/pipermail/bug-fileutils/</a>
+<dd>The File Utilities mailing list archives of the bug list.
+
+<br><dt><a href="http://mail.gnu.org/pipermail/bug-sh-utils/">http://mail.gnu.org/pipermail/bug-sh-utils/</a>
+<dd>The Shell Utilities mailing list archives of the bug list.
+
+<br><dt><a href="http://mail.gnu.org/pipermail/bug-textutils/">http://mail.gnu.org/pipermail/bug-textutils/</a>
+<dd>The Text Utilities mailing list archives of the bug list. 
+</dl>
+
+<p>Here are the top level list manager pages for these lists.
+
+<dl>
+<dt><a href="http://mail.gnu.org/mailman/listinfo/bug-fileutils">http://mail.gnu.org/mailman/listinfo/bug-fileutils</a>
+<dd>Otherwise known as <a href="mailto:bug-fileutils@gnu.org">&lt;bug-fileutils@gnu.org&gt;</a>, This is the bug list for the GNU File
+Utilities.
+
+<br><dt><a href="http://mail.gnu.org/mailman/listinfo/bug-sh-utils">http://mail.gnu.org/mailman/listinfo/bug-sh-utils</a>
+<dd>Otherwise known as <a href="mailto:bug-sh-utils@gnu.org">&lt;bug-sh-utils@gnu.org&gt;</a>, This is the bug list for the GNU Shell
+Utilities.
+
+<br><dt><a href="http://mail.gnu.org/mailman/listinfo/bug-textutils">http://mail.gnu.org/mailman/listinfo/bug-textutils</a>
+<dd>Otherwise known as <a href="mailto:bug-textutils@gnu.org">&lt;bug-textutils@gnu.org&gt;</a>, This is the bug list for the GNU Text
+Utilities. 
+</dl>
+
+<p>Whew!  Now that we have all of the enurations over with we can refer to
+these solely by the combined name of GNU Core Utilities.  But perhaps I
+will still slip and refer to one or the other at times.  If I do, please
+forgive me and make do.
+
+<p><hr>
+Node:<a name="Where%20can%20I%20get%20the%20latest%20version%20of%20GNU%20fileutils%3f">Where can I get the latest version of GNU fileutils?</a>,
+Next:<a rel=next href="#How%20do%20I%20add%20a%20question%20to%20the%20FAQ%3f">How do I add a question to the FAQ?</a>,
+Previous:<a rel=previous href="#Where%20can%20I%20get%20more%20information%20about%20GNU%20Core%20Utils%3f">Where can I get more information about GNU Core Utils?</a>,
+Up:<a rel=up href="#Top">Top</a>
+<br>
+
+<h1>Where can I get the latest version of GNU Core Utils?</h1>
+
+<p>Okay I was wrong.  There is still another enumerated list of locations. 
+The GNU Utilities source code can always be downloaded by FTP from
+<a href="ftp://ftp.gnu.org/pub/gnu/">ftp://ftp.gnu.org/pub/gnu/</a> and then selecting the appropriate
+subdirectory named after the package.  Here is the complete list.
+
+<dl>
+<dt><a href="ftp://ftp.gnu.org/pub/gnu/fileutils">ftp://ftp.gnu.org/pub/gnu/fileutils</a>
+<dd>The File Utilities main ftp site.
+
+<br><dt><a href="ftp://ftp.gnu.org/pub/gnu/sh-utils">ftp://ftp.gnu.org/pub/gnu/sh-utils</a>
+<dd>The Shell Utilities main ftp site.
+
+<br><dt><a href="ftp://ftp.gnu.org/pub/gnu/textutils">ftp://ftp.gnu.org/pub/gnu/textutils</a>
+<dd>The Text Utilities main ftp site. 
+</dl>
+
+<p>Development releases of GNU fileutils source code can be downloaded from
+<a href="ftp://alpha.gnu.org/gnu/fetish">ftp://alpha.gnu.org/gnu/fetish</a>.  These are test releases and
+although are generally of good quality have not been tested well enough
+to be considered release quality.  Use with care.  When possible it
+helps to report any bugs as seen against those versions as those are the
+ones in current development.
+
+<p><hr>
+Node:<a name="How%20do%20I%20add%20a%20question%20to%20the%20FAQ%3f">How do I add a question to the FAQ?</a>,
+Next:<a rel=next href="#How%20do%20I%20report%20a%20bug%3f">How do I report a bug?</a>,
+Previous:<a rel=previous href="#Where%20can%20I%20get%20the%20latest%20version%20of%20GNU%20fileutils%3f">Where can I get the latest version of GNU fileutils?</a>,
+Up:<a rel=up href="#Top">Top</a>
+<br>
+
+<h1>How do I add a question to the FAQ?</h1>
+
+<p>Send a plain text e-mail to one of the bug lists enumerated above.  Also
+with the answer if you have one.  Do <em>not</em> send HTML encoded
+messages.  Please allow some time for processing.  Many people read the
+mail so please try to be concise.  Even if you do not receive a personal
+response your message will have been read by the maintainers.  But so
+many messages are posted that it can be overwhelming for us at times.
+
+<p><hr>
+Node:<a name="How%20do%20I%20report%20a%20bug%3f">How do I report a bug?</a>,
+Next:<a rel=next href="#I%20use%20the%20Cygwin%20port%20and%20I%20have%20a%20problem.">I use the Cygwin port and I have a problem.</a>,
+Previous:<a rel=previous href="#How%20do%20I%20add%20a%20question%20to%20the%20FAQ%3f">How do I add a question to the FAQ?</a>,
+Up:<a rel=up href="#Top">Top</a>
+<br>
+
+<h1>How do I report a bug?</h1>
+
+<p>Please be sure that the bug you are reporting is actually related to the
+GNU utilities.  Many times people report problems in other unrelated
+programs.  Those may be legitimate bugs but the GNU utilities
+maintainers are in no position to be able to do anything about other
+people's software.  People have reported bugs in their sound cards and
+crashes of their disk drives and panics of their operating system
+kernel.  We can't help you about any of those things.
+
+<p>If possible please test for the presence of your problem using the
+latest version of the software.  The GNU utilities are widely used and
+many times the bug will already have been found and fixed in a later
+version.  Check the mailing list archives to see if someone else has
+already reported your problem.  Keep in mind that many people will be
+reading the list and it can be difficult to keep up with the volume
+repeats.
+
+<p>If you think you have a real bug then send mail to the bug discussion
+list.  Use a subject that is descriptive of the issue.  Think of how
+difficultit is to follow a thread of discussion when every subject line
+is simply <strong>bug</strong>.
+
+<p>Good examples:
+<pre>    mv &amp;&amp; hardlinks problem
+    dd and skip on Linux tape devices and pipes
+    assertion failure in mv command
+    fails to compile on platform xyz
+</pre>
+
+<p>Bad examples:
+<pre>    question?
+    help!
+    bug report
+</pre>
+
+<p>In your description indicate the version of the program that you are
+seeing with the problem.  Also note the operating system type and
+version.  The GNU utilities run on many different types of systems and
+some problems will be unique to them.  We are good at guessing your
+environment but it is much simpler if we have the information without
+guessing.
+
+<p>Include as small of a test case as you can manage to create that will
+allow others to recreate the problem.  If the problem cannot be
+recreated then it is very difficult to diagnose or fix.
+
+<p>Patches to the source code are always appreciated.  But even if you do
+not feel comfortable at the source code level reports of bugs are always
+welcome.
+
+<p><hr>
+Node:<a name="I%20use%20the%20Cygwin%20port%20and%20I%20have%20a%20problem.">I use the Cygwin port and I have a problem.</a>,
+Next:<a rel=next href="#Why%20can%20only%20root%20chown%20files%3f">Why can only root chown files?</a>,
+Previous:<a rel=previous href="#How%20do%20I%20report%20a%20bug%3f">How do I report a bug?</a>,
+Up:<a rel=up href="#Top">Top</a>
+<br>
+
+<h1>I use the Cygwin port and I have a problem.</h1>
+
+<p>The hard work the Cygwin team has put in to porting the GNU utilities to
+Windows is greatly admired.  However the GNU team generally uses UNIX
+systems and do not have access to Cygwin systems.  Most of us can't
+help.  It would be most appreciated if you would make your bug report
+directly to the Cygwin folks.  They are the experts and best suited to
+handle the problem.
+
+<dl>
+<dt><a href="http://sources.redhat.com/cygwin/">http://sources.redhat.com/cygwin/</a>
+<dd>Cygwin Home Page
+
+<br><dt><a href="http://sources.redhat.com/cygwin/bugs.html">http://sources.redhat.com/cygwin/bugs.html</a>
+<dd>Cygwin Bug Report Guidelines.  This is a good reference for general bug
+reporting. 
+</dl>
+
+<p><hr>
+Node:<a name="Why%20can%20only%20root%20chown%20files%3f">Why can only root chown files?</a>,
+Next:<a rel=next href="#chown%20fails%20when%20the%20username%20contains%20a%20'.'%20in%20it.">chown fails when the username contains a '.' in it.</a>,
+Previous:<a rel=previous href="#I%20use%20the%20Cygwin%20port%20and%20I%20have%20a%20problem.">I use the Cygwin port and I have a problem.</a>,
+Up:<a rel=up href="#Top">Top</a>
+<br>
+
+<h1>Why can only root chown files?</h1>
+
+<p>Actually, the GNU chown command does not know if this is the policy of
+the system or not.  It calls the kernel system call chown() just like
+any other program (e.g. perl, ruby, etc.)  If the OS allows it then it
+will change the ownership of the file.  Different systems handle this
+differently.  Traditional System V UNIX systems allow anyone to give a
+file away to other owners.  On those systems GNU chown does change the
+ownership of files.
+
+<p>But on most modern systems BSD symantics are followed and only the
+superuser can change the ownership of the file.  The problem for
+documenting this is that GNU chown does not know which it will be
+running on.  It could be one or it could be the other.  Or it might even
+be running on a system without the concept of file ownership at all! 
+This is really an OS policy decision and it is hard to track
+documentation to be different on different systems.
+
+<p>The reason to restrict ownership is mostly threefold.  One is that
+people have used this to avoid disk space quota restrictions.  Give the
+file to someone (like root) with disk quota to spare.  Two is that you
+can deny someone service by using all of their quota until they cannot
+create any files.  Three is that a user can create files that they
+cannot remove.
+
+<p>With the old semantics it was possible for normal users to create
+situations that only the superuser could fix.  Such as creating a
+non-writable directory of files and then giving the ownership away. 
+Since they no longer own the files they can't change them, nor can they
+remove them.  This is commonly a problem when untaring files that other
+people created with restrictive file permisions.  The new semantics
+avoid this problem entirely.  Therefore most systems today have been
+changed to disallow giving file ownership away.  But as noted it has not
+always been that way.
+
+<p><hr>
+Node:<a name="chown%20fails%20when%20the%20username%20contains%20a%20'.'%20in%20it.">chown fails when the username contains a '.' in it.</a>,
+Next:<a rel=next href="#How%20do%20I%20remove%20files%20that%20start%20with%20a%20'-'%20such%20as%20'-i'%3f">How do I remove files that start with a '-' such as '-i'?</a>,
+Previous:<a rel=previous href="#Why%20can%20only%20root%20chown%20files%3f">Why can only root chown files?</a>,
+Up:<a rel=up href="#Top">Top</a>
+<br>
+
+<h1>chown fails when the username contains a '.' in it.</h1>
+
+<p>That was fixed in test releases for fileutils-4.1.  Newer versions fix
+that problem.
+
+<p><hr>
+Node:<a name="How%20do%20I%20remove%20files%20that%20start%20with%20a%20'-'%20such%20as%20'-i'%3f">How do I remove files that start with a '-' such as '-i'?</a>,
+Next:<a rel=next href="#I%20have%20a%20file%20called%20'--help'">I have a file called '--help'</a>,
+Previous:<a rel=previous href="#chown%20fails%20when%20the%20username%20contains%20a%20'.'%20in%20it.">chown fails when the username contains a '.' in it.</a>,
+Up:<a rel=up href="#Top">Top</a>
+<br>
+
+<h1>How do I remove files that start with a '-' such as '-i'?</h1>
+
+<p>Since the file name begins with a '-' it looks like an option to the
+command.  You need to force it to not look like an option.  Put a ./ in
+the front of it.  Or give it the full file name path.  Or tell the
+command you are through with options by using the double dash to end all
+option processing.  This is common to most traditional UNIX commands.
+
+<pre>  rm ./-stuff
+  rm /full/path/-stuff
+  rm -- -stuff
+</pre>
+
+<p>And the same for other utilities too.
+
+<pre>  mv ./-stuff differentstuff
+  mv -- -stuff differentstuff
+</pre>
+
+<p><hr>
+Node:<a name="I%20have%20a%20file%20called%20'--help'">I have a file called '--help'</a>,
+Next:<a rel=next href="#I%20have%20a%20file%20'-f'%20and%20it%20affects%20rm.">I have a file '-f' and it affects rm.</a>,
+Previous:<a rel=previous href="#How%20do%20I%20remove%20files%20that%20start%20with%20a%20'-'%20such%20as%20'-i'%3f">How do I remove files that start with a '-' such as '-i'?</a>,
+Up:<a rel=up href="#Top">Top</a>
+<br>
+
+<h1>I have a file called '-help', how do I remove it?</h1>
+
+<p>This is just a variant of the previous question.  It also applies to
+files named '-i' and the like.
+
+<pre>  rm ./--help
+  rm -- --help
+  rm ./-i
+  rm -- -i
+</pre>
+
+<p>In fact touching a file called <code>-i</code> in a directory is an old trick
+to avoid accidentally saying <code>rm *</code> and having it remove all of the
+files.  Since the <code>*</code> expands to match all file names the first
+such name will be the <code>-i</code>.  That will make the command <code>rm -i
+file1 file2</code>.  As you can see that will cause <code>rm</code> to prompt you
+and if that is not what you wanted them you can interrupt the command. 
+I don't personally like this and don't recommend it.
+
+<p><hr>
+Node:<a name="I%20have%20a%20file%20'-f'%20and%20it%20affects%20rm.">I have a file '-f' and it affects rm.</a>,
+Next:<a rel=next href="#Why%20doesn't%20rm%20-r%20*.pattern%20recurse%20like%20it%20should%3f">Why doesn't rm -r *.pattern recurse like it should?</a>,
+Previous:<a rel=previous href="#I%20have%20a%20file%20called%20'--help'">I have a file called '--help'</a>,
+Up:<a rel=up href="#Top">Top</a>
+<br>
+
+<h1>I have a file '-f' and it affects rm.</h1>
+
+<p>I have a directory containing some files and also '-f' as a filename and
+<code>rm</code> thinks I gave it the <code>-f</code> option.  Why?
+
+<pre>    $ ls
+    -f bar foo
+    $ rm -i *
+    $ ls
+    -f
+</pre>
+
+<p>This is not a bug.  This is normal behavior.  The shell expands file
+globs such as '*'.  The command that rm is seeing is the following. 
+You can test that with the echo command.  echo rm -i *
+
+<pre>  rm -i -f bar baz foo fum
+</pre>
+
+<p>The -f option to rm overrides the -i option.  Therefore the files are
+removed without asking.  Since the shell expands globs like '*' before
+the program sees the command line it cannot distinguish between
+something the user typed and something that was expanded by the shell. 
+The shell filters all command lines.  This is a good thing and adds a
+lot of power to the system but it means you have to know that the
+shell expansion filter is there to write robust scripts and command
+lines.
+
+<p>To robustly write a command that does what you are wanting you need to
+do one of the following:
+
+<pre>  rm -i ./*
+  rm -i -- *
+</pre>
+
+<p>See the previous question with regards to a filename <code>-i</code>.
+
+<p><hr>
+Node:<a name="Why%20doesn't%20rm%20-r%20*.pattern%20recurse%20like%20it%20should%3f">Why doesn't rm -r *.pattern recurse like it should?</a>,
+Next:<a rel=next href="#Why%20don't%20the%20utilities%20have%20built%20in%20directory%20recursion%3f">Why don't the utilities have built in directory recursion?</a>,
+Previous:<a rel=previous href="#I%20have%20a%20file%20'-f'%20and%20it%20affects%20rm.">I have a file '-f' and it affects rm.</a>,
+Up:<a rel=up href="#Top">Top</a>
+<br>
+
+<h1>Why doesn't rm -r *.pattern recurse like it should?</h1>
+
+<p>This question is asked a number of ways:
+
+<pre>  rm -r *.exe
+  chmod -R 744 *.pl
+  chown -R user:user *.html
+</pre>
+
+<p>This is the same correct behavior as other typical programs such as ls
+-R, chmod -R, chown -R, etc.  Try 'ls -R *.exe', for example.  Here are
+the pieces of information you need to understand what is happening.
+
+<p>The -r (and -R) option says that if any of the files listed on the
+command line are a directory then recurse down through those
+directories.  Only arguments to the program which are directories are
+recursively acted upon.  So any program argument which is a directory
+will be removed completely which would mean recursing down that
+directory and removing anything below it.  But if the command line
+argument (after shell expansion) is not a directory then it won't go
+searching trying to find a match.
+
+<p>Here is another piece of information to understand the behavior.  The
+shell interpreter is expanding the command line glob characters prior
+to handing the arguments off to your command.  This is a simple form
+of regular expression matching designed to make file name matching
+easier.  This provides a consistent interface to all programs since
+the expansion code is common to all programs by being in the
+interpreting shell instead of in the program itself.  Commands in UNIX
+do not see the '*.exe' or any of the shell metacharacters.  Commands
+see the expanded out names which the shell found matched file names in
+current directory.
+
+<p>The '*' is the "glob" character because it matches a glob of
+characters.  But it only matches files in the current directory.  It
+does not go out and list files in other directories.  The shell
+matches and expands glob characters and hands of the resulting
+information to the command.
+
+<p>You can double check this by using the echo command.  This is built
+into most command shells, for example into bash.  Try echo *.exe.  Try
+echo */*.exe.  In your example the first would print out *.exe if
+nothing matched but would print out all file names that did match. 
+The command would see the result and has no idea that you provided a
+wild card to match against file names.
+
+<p>If you want to match files in subdirectories as well then you would
+need to say so explicitly with */*.exe.  The first star would match
+all file names in the current directory.  Then the second *.exe would
+be matching files in the subdirectories under names already matched by
+the first '*' glob.
+
+<p>All of that was to explain why things are working as they should.  But
+here is what you really want to do.  If you want to search all
+directories below a location, let's say your present working
+directory, then you can use other UNIX commands such as 'find' to do
+so.  Here is an example, untested, use at your own peril, that would
+do your rm on all .exe files below your current working directory.
+
+<p>Works for small numbers of files:
+
+<pre>  chgrp mygrp $(find . -name '*.html' -print)
+</pre>
+
+<p>The $(command) execute the find command, take the output of the find
+command and place it right there on the command line in place of the $()
+and hand the results off to the rm command.  <strong>BEWARE!</strong>  Test this
+out with the echo command prior to real usage!  Note that the '*.html'
+is quoted to keep the shell from expanding it.  The find command will do
+the expansion itself in this case and so the '*' needs to be hidden in a
+string to keep the shell from expanding it first.
+
+<pre>  echo rm -f $(find . -name '*.exe' -print)
+  echo chmod u+w $(find . -name '*.html' -print)
+</pre>
+
+<p>Unfortunately this transferal of functionality from the command to the
+shell comes at a cost.  There is a limited amount of argument space
+that is available for this argument expansion of file names.  It is
+different on different systems and getting larger as RAM gets cheaper
+but almost always there is still limit.  20KB was typical for a time
+and now 2MB is common but it is a limit regardless and additionally it
+is usually shared with environment variable space.  The xargs command
+was designed specifically to work around this limited argument space
+limit.  If you have a HUGE subdirectory with thousands of files the
+above command will fail execute.  Therefore a better method is to use
+find coupled with xargs.
+
+<p>Traditional:
+
+<pre>  find . -name '*.exe' -print | xargs chmod a+x
+</pre>
+
+<p>Robust and safer but not yet universally implemented using the -print0
+option and zero terminated strings instead of newline terminated
+strings:
+
+<pre>  find . -name '*.exe' -print0 | xargs -0 chmod a+x
+</pre>
+
+<p>You could substitute a full path in place of the 'find .' such as
+something like 'find /class/home'.  Note that these are pretty much
+equivalent to the following question which might be easier to understand
+what is going on.
+
+<p><hr>
+Node:<a name="Why%20don't%20the%20utilities%20have%20built%20in%20directory%20recursion%3f">Why don't the utilities have built in directory recursion?</a>,
+Next:<a rel=next href="#ls%20-d%20does%20not%20list%20directories!">ls -d does not list directories!</a>,
+Previous:<a rel=previous href="#Why%20doesn't%20rm%20-r%20*.pattern%20recurse%20like%20it%20should%3f">Why doesn't rm -r *.pattern recurse like it should?</a>,
+Up:<a rel=up href="#Top">Top</a>
+<br>
+
+<h1>Why don't the utilities have built in directory recursion?</h1>
+
+<p>People frequently wonder why
+<code>cat</code>,
+<code>chgrp</code>,
+<code>chmod</code>,
+<code>chown</code>,
+<code>ls</code>,
+<code>mv</code>,
+<code>rmdir</code>,
+<code>rm</code>,
+<code>touch</code>,
+do not support <code>find</code> type of operations.  This is part of the
+subtle but beautiful design of the UNIX system.  Programs should be
+simple and modular.  Common behavior should be modularized into a common
+location where it can be used by other programs.  More complicated
+programs are created by chaining together simpler programs.
+
+<p>Here is an example of the unix philosophy in action.  Let's say you only
+want to restrict directory listings to only show directories.  The
+normal thing would be to use a combination of commands.  This will do
+what you want.
+
+<pre>  ls -al | grep ^d
+</pre>
+
+<p>This is assuming you are using bash, some other shells such as the old
+sh have ^ as being special, a synonym for |, and you would have to quote
+it, this will generate the full listing and the grep would only show you
+the lines starting with 'd'.  Those are the directories.  Doing this
+type of command chaining is a very typical way of doing things under
+unix.
+
+<p>When people find that particular combinations of commands are ones
+that they use a lot then they will typically create a shell script, a
+shell function or a shell alias which does this with a shorter name. 
+I like shell scripts because they are easier to pass around.  If you
+found the above command one that you always used then perhaps you
+would create the following shell script.
+
+<p>File lsdir:
+<pre>  #!/bin/sh
+  ls -al "$@" | grep ^d
+</pre>
+
+<p>You could call it whatever you desired.  Then it would work just like
+ls but with your special behavior.  For all intents and purposes it
+would be just like a normal unix command and its output could be piped
+into other commands.
+
+<p><hr>
+Node:<a name="ls%20-d%20does%20not%20list%20directories!">ls -d does not list directories!</a>,
+Next:<a rel=next href="#Argument%20list%20too%20long">Argument list too long</a>,
+Previous:<a rel=previous href="#Why%20don't%20the%20utilities%20have%20built%20in%20directory%20recursion%3f">Why don't the utilities have built in directory recursion?</a>,
+Up:<a rel=up href="#Top">Top</a>
+<br>
+
+<h1>ls -d does not list directories!</h1>
+
+<p>I typed in <kbd>ls -dl</kbd> but it only showed me the current directory.
+
+<p>Well, yes, that is what it is supposed to do.  The default directory to
+list if none is specified is the current directory.  The -d option
+prevents recursively listing the directory.  Therefore ls -ld lists only
+attributes of the current directory.
+
+<p>But I expected to see all of the directories.
+
+<p>That would be the output of 'ls -l' without the -d option.
+
+<p>The -d option is meant to prevent ls from listing the contents of
+directories when you only wnat it to list the names of the
+directories.
+
+<p>To understand the usefulness of the -d option try this example. 
+Compare the differences in the results of ls when you use the -d
+option versus when you do not.
+
+<pre>  ls -ld /etc/*.d
+  ls -l /etc/*.d
+</pre>
+
+<p>If you are trying to find files in the directory hierarchy then you
+should look into using the <code>find</code> command.  It is very powerful
+and contains an interface which can be used with many other progams.
+
+<pre>  info find
+</pre>
+
+<p><hr>
+Node:<a name="Argument%20list%20too%20long">Argument list too long</a>,
+Next:<a rel=next href="#I%20am%20trying%20to%20compile%20a%20C%20program%20...">I am trying to compile a C program ...</a>,
+Previous:<a rel=previous href="#ls%20-d%20does%20not%20list%20directories!">ls -d does not list directories!</a>,
+Up:<a rel=up href="#Top">Top</a>
+<br>
+
+<h1>Argument list too long</h1>
+
+<p>I tried to move about 5000 files with mv, but it said:
+<pre>  bash: /bin/mv: Argument list too long
+</pre>
+
+<p>The UNIX operating system tradionally has a fixed limit for the amount
+of memory that can be used for a program environment and argument list
+combined.  You can use getconf to return that limit.  On my Linux system
+(2.2.12) that amount is 128k.  On my HP-UX system (11.0) that amount is
+2M.  It can vary per operating system.  POSIX only requires 20k which
+was the traditional value used for probably 20 years.  Newer operating
+systems releases usually increase that somewhat.
+
+<pre>  getconf ARG_MAX
+  131072
+</pre>
+
+<p>Note that your message came from "bash" your shell command line
+interpreter.  Its job is to expand command line wildcard characters
+that match filenames.  It expands them before any program can see
+them.  This is therefore common to all programs on most UNIX-like
+operating systems.  It cannot exceed the OS limit of ARG_MAX and if it
+tries to do so the error "Argument list too long" is returned to the
+shell and the shell returns it to your.
+
+<p>This is not a bug in 'mv' or other utilitities nor is it a bug in 'bash'
+or any other shell.  It is an architecture limitation of UNIX-like
+operating systems.  The 'mv' program was prevented by the OS from
+running and the shell is just the one in the middle reporting the
+problem. The shell tried to load the program but the OS ran out of
+space.  However, this problem is one that is easily worked around using
+the supplied utilities.  Please review the documentation on 'find' and
+'xargs' for one possible combination of programs that work well.
+
+<p>You might think about increasing the value of ARG_MAX but I advise
+against it.  Any limit, even if large, is still a limit.  As long as it
+exists then it should be worked around for robust script operation.  On
+the command line most of us ignore it unless we exceed it at which time
+we fall back to more robust methods.
+
+<p>Here is an example using chmod where exceeding ARG_MAX argument length
+is avoided.
+
+<pre>  find htdocs -name '*.html' -print0 | xargs -0 chmod a+r
+</pre>
+
+<p>Read the previous question for another facet of this problem.
+
+<p><hr>
+Node:<a name="I%20am%20trying%20to%20compile%20a%20C%20program%20...">I am trying to compile a C program ...</a>,
+Next:<a rel=next href="#I%20am%20having%20a%20problem%20with%20kill">I am having a problem with kill</a>,
+Previous:<a rel=previous href="#Argument%20list%20too%20long">Argument list too long</a>,
+Up:<a rel=up href="#Top">Top</a>
+<br>
+
+<h1>I am trying to compile a C program program ...</h1>
+
+<p>This frequently occurs with a question such as, I have found a bug in
+the sleep() function, or, I am trying to use the chown() function in my
+program.  That may well be true.  But those library functions are not
+the same as the command line programs.  The command line program in the
+GNU utilities are also C program and just like your program are using
+the same C library and operating system calls.  But we can't help you
+with your problem since that code is in the system's C library and not
+in any of the utility packages.
+
+<p>Sometimes the same name is used for both a program and a system call. 
+In fact most of the programs got their names because that was what the
+system call was named.  One caused the other.  Which means that it is
+very likely that the <code>sleep</code> program was named because it used
+the <code>sleep</code> library routine.
+
+<p>This usually happens with
+<code>chgrp</code>,
+<code>chmod</code>,
+<code>chown</code>,
+<code>mkdir</code>,
+<code>mknod</code>,
+<code>nice</code>,
+<code>rmdir</code>,
+<code>sleep</code>,
+<code>sync</code>,
+<code>uname</code>,
+or one of the other programs that have a name matching a C programming
+routine.  It can be confusing to realize that the program is a wrapper
+to the underlying library routine or system call.  If you are compiling
+a program then you are <strong>NOT</strong> using the GNU command line utility
+in your C/C++ program.  You could be using the GNU command line utility
+in your shell script, however.
+
+<p>You may be confusing the C library routine used in your program with the
+shell command line program.  They are not related.  Except that the
+program calls the library function just like your program does.  If you
+have a real bug in the library routine then you need to determine who
+supplied that library and report the bug to them.  If it is the GNU Lib
+C, a.k.a. glibc, provided library then the glibc mailing list at
+<a href="mailto:bug-glibc@gnu.org">&lt;bug-glibc@gnu.org&gt;</a> might be a useful
+future reference.
+
+<p>The online man pages can also be confusing in regard to this.  If you
+are trying to use chown() in a program and get a man page you will
+likely get the man page for the command line program and not the library
+routine you were looking for.  You must specify the <strong>section</strong> of
+the manual that you want information.
+
+<pre>  man chown
+  man 2 chown
+  man sleep
+  man 3 sleep
+</pre>
+
+<p>Traditionally man pages are organized by section number.  Section 1 are
+command line programs.  Section 2 are operating system calls, aka kernel
+calls.  Section 3 are library routines.  Library routines may or may not
+use system calls.  Etc.  Other sections are used for other purposes that
+are not germane here.
+
+<p>Many GNU programs have deprecated the <code>man</code> pages and have moved
+entirely to <code>info</code> documentation.  But man pages still have a
+loyal following and are quite useful for reference.  But they make poor
+user guides.
+
+<p><hr>
+Node:<a name="I%20am%20having%20a%20problem%20with%20kill">I am having a problem with kill</a>,
+Next:<a rel=next href="#Sort%20does%20not%20sorting%20in%20normal%20order!">Sort does not sorting in normal order!</a>,
+Previous:<a rel=previous href="#I%20am%20trying%20to%20compile%20a%20C%20program%20...">I am trying to compile a C program ...</a>,
+Up:<a rel=up href="#Top">Top</a>
+<br>
+
+<h1>I am having a problem with kill, nice, pwd, sleep, or test.</h1>
+
+<p>This is frequently a variant of the previous question.  Go read it first
+and then come back here.  This time the same name is used by a utility
+and is also built into a command line shell.  In which case you might
+need to report your problem to your shell maintainers.
+
+<p>Many commands are built into your command shell so as to speed up shell
+scripts.  People frequently get confused over whether they are running
+the external program or the internal shell built in.  This usually
+happens with
+<code>kill</code>,
+<code>nice</code>,
+<code>pwd</code>,
+<code>printf</code>,
+<code>sleep</code>,
+<code>test</code>,
+and some others that exist both as internal and external commands. 
+Double check that the problem you are having is with the external
+program.  If it is the internal version then contemplate reporting it to
+<a href="bug-bash@gnu.org">&lt;bug-bash@gnu.org&gt;</a>.
+
+<p>Many times a program is required by circumstances to exist both as a
+builtin and as an external.  Usually this is because of the need to be
+exec'd directly from another program without a shell to implement it as
+a builtin.  Therefore it must exist as an external, standalone utility. 
+However, those utilities are also built into most shells in order to
+improve the speed performance.
+
+<p><hr>
+Node:<a name="Sort%20does%20not%20sorting%20in%20normal%20order!">Sort does not sorting in normal order!</a>,
+Next:<a rel=next href="#The%20ls%20command%20is%20not%20listing%20files%20in%20a%20normal%20order!">The ls command is not listing files in a normal order!</a>,
+Previous:<a rel=previous href="#I%20am%20having%20a%20problem%20with%20kill">I am having a problem with kill</a>,
+Up:<a rel=up href="#Top">Top</a>
+<br>
+
+<h1>Sort does not sorting in normal order!</h1>
+
+<p>This one question arises almost more often than any other.  It is due to
+a very popular Linux distribution setting LANG=en_US in your user
+environment without your knowledge.  At that point sort appears broken. 
+But once specifically requested by LANG and others like LC_* variables,
+sort and other locale knowledgable programs <strong>must</strong> respect that
+setting and sort according to the operating system locale tables.
+
+<p>Of course those tables are a blessing to non-english speaking computer
+users.  Many languages use non-ASCII fonts and character sets.  The
+POSIX standards and the GNU utilities support those by using the
+installed system library sorting routines.  By using them languages can
+specify a specific ordering.  This can be done by a translator well
+after the program has been written and by translators not known by the
+program author.  It is a dynamic change to the program.  However, when
+those tables are incorrect it can also break a perfectly correct
+program.  When locale tables are broken this is most noticable with the
+sort command so it bears the full force of the problem.
+
+<p>Here is the standard mailing list reply on this topic.
+
+<p>This is due to the fact that you or your vendor have set environment
+variables that direct the program to use locale specific sorting
+tables which do not sort as you expect.  You or your vendor have
+probably set environment variables like LANG, LC_ALL, or LANG to
+en_US.  There appears to be a problem with that table on some systems
+which is not part of the GNU program but part of your vendor's system
+release.
+
+<p>Unset them, and then set LC_ALL to POSIX.
+
+<pre>  # If you use bash or some other Bourne-based shell,
+  export LC_ALL=POSIX
+
+  # If you use a C-shell,
+  setenv LC_ALL POSIX
+</pre>
+
+<p>and it will then work the way you expect because it will use a
+different set of tables.
+
+<p>See the standards documentation for more information on the locale
+variables with regards to sort.
+
+<a href="http://www.unix-systems.org/single_unix_specification_v2/xcu/sort.html">http://www.unix-systems.org/single_unix_specification_v2/xcu/sort.html</a>
+
+<p><hr>
+Node:<a name="The%20ls%20command%20is%20not%20listing%20files%20in%20a%20normal%20order!">The ls command is not listing files in a normal order!</a>,
+Next:<a rel=next href="#The%20date%20command%20is%20not%20working%20right.">The date command is not working right.</a>,
+Previous:<a rel=previous href="#Sort%20does%20not%20sorting%20in%20normal%20order!">Sort does not sorting in normal order!</a>,
+Up:<a rel=up href="#Top">Top</a>
+<br>
+
+<h1>The ls command is not listing files in a normal order!</h1>
+
+<p>This is just a variant of the previous question.  Any program that is
+compliant with the standards and implements locale based collating
+sequences to support non-ascii languages will be affected.
+
+<p>See the standards documentation for more information on the locale
+variables with regards to ls.
+
+<a href="http://www.unix-systems.org/single_unix_specification_v2/xcu/ls.html">http://www.unix-systems.org/single_unix_specification_v2/xcu/ls.html</a>
+
+<p><hr>
+Node:<a name="The%20date%20command%20is%20not%20working%20right.">The date command is not working right.</a>,
+Next:<a rel=next href="#ln%20-s%20did%20not%20link%20my%20files%20together">ln -s did not link my files together</a>,
+Previous:<a rel=previous href="#The%20ls%20command%20is%20not%20listing%20files%20in%20a%20normal%20order!">The ls command is not listing files in a normal order!</a>,
+Up:<a rel=up href="#Top">Top</a>
+<br>
+
+<h1>The date command is not working right.</h1>
+
+<p>If you are using date version 2.0 or earlier that is certainly
+possible.  A large number of bug fixes and improvements went into the
+sh-utils-2.0.11 around October 2000.  Please install a newer version of
+the code.  The test release versions at
+<a href="ftp://alpha.gnu.org/gnu/fetish">ftp://alpha.gnu.org/gnu/fetish</a> are best.
+
+<p><hr>
+Node:<a name="ln%20-s%20did%20not%20link%20my%20files%20together">ln -s did not link my files together</a>,
+Next:<a rel=next href="#How%20do%20I%20change%20the%20ownership%20or%20permissions%20of%20a%20symlink%3f">How do I change the ownership or permissions of a symlink?</a>,
+Previous:<a rel=previous href="#The%20date%20command%20is%20not%20working%20right.">The date command is not working right.</a>,
+Up:<a rel=up href="#Top">Top</a>
+<br>
+
+<h1>ln -s did not link my files together</h1>
+
+<p>Symbolic links are created with ln -s.  That creates a name redirection. 
+When a symlink is accessed the filesystem will take the contents of the
+symlink as a redirection to another file, where the process may
+recursively be continued many times.  If you were meaning "ln -s a /c/b"
+then that would create /c/b which would be a relative symlink to file
+"/c/a".  If /c/a did not exist then this would be dangling until such
+time at that file was created.  The owner, group and mode of a symlink
+are not significant to file access through it.
+
+<p>Symbolic links may use either absolute or relative paths but there are
+tradeoffs.  Generally I advocate making only relative links so that
+the location is network independent and will work desirably across NFS
+mounted filesystems.
+
+<p><hr>
+Node:<a name="How%20do%20I%20change%20the%20ownership%20or%20permissions%20of%20a%20symlink%3f">How do I change the ownership or permissions of a symlink?</a>,
+Next:<a rel=next href="#Value%20too%20large%20for%20defined%20data%20type">Value too large for defined data type</a>,
+Previous:<a rel=previous href="#ln%20-s%20did%20not%20link%20my%20files%20together">ln -s did not link my files together</a>,
+Up:<a rel=up href="#Top">Top</a>
+<br>
+
+<h1>How do I change the ownership or permissions of a symlink?</h1>
+
+<p>The owner, group, and permissions of a symlink are not in any way
+significant.  Only the value of the symlink is meaningful.  Regardless
+of that some operating systems will allow you change the owner, group or
+mode of a symlink and other operating systems will not.  Do not worry
+about it as it does not matter in any case.
+
+<p><hr>
+Node:<a name="Value%20too%20large%20for%20defined%20data%20type">Value too large for defined data type</a>,
+Next:<a rel=next href="#Tar%20created%20a%20Large%20File%20but%20I%20can't%20remove%20it.">Tar created a Large File but I can't remove it.</a>,
+Previous:<a rel=previous href="#How%20do%20I%20change%20the%20ownership%20or%20permissions%20of%20a%20symlink%3f">How do I change the ownership or permissions of a symlink?</a>,
+Up:<a rel=up href="#Top">Top</a>
+<br>
+
+<h1>Value too large for defined data type</h1>
+
+<p>It means that your version of the utilities were not compiled with large
+file support enabled.  The GNU utilities do support large files if they
+are compiled to do so.  You may want to compile them up again and make
+sure that large file support is enabled.  This support is automatically
+configured by autoconf on most systems.  But it is possible that on your
+particular system it could not determine how to do that and therefore
+autoconf concluded that your system did not support large files.
+
+<p>The message "Value too large for defined data type" is a system error
+message reported when an operation on a large file is attempted using a
+non-large file data type.  Large files are defined as anything larger
+than a signed 32-bit integer, or stated differently, larger than 2GB.
+
+<p>Many system calls that deal with files return values in a "long int"
+data type.  On 32-bit hardware a long int is 32-bits and therefore this
+imposes a 2GB limit on the size of files.  When this was invented that
+was <strong>HUGE</strong> and it was hard to conceive of needing anything that
+large.  Time has passed and files can be much larger today.  On native
+64-bit systems the file size limit is usually 2GB * 2GB.  Which we will
+again think is huge.
+
+<p>You may see that on a 32-bit system with a 32-bit "long int" you can't
+make it any bigger.  At least not and maintain compatibility with
+previous programs.  Changing that would break many things!  But many
+systems make it is possible to switch into a new program mode which
+rewrites all of the file operations into a 64-bit program model. 
+Instead of "long" they use a new data type called "off_t" which is
+constructed to be 64-bits in size.  Program source code must be written
+to use the off_t data type instead of the long data type.  This is
+typically done by defining -D_FILE_OFFSET_BITS=64 or some such.  It is
+stysem dependent.  Once done and once switched into this new mode most
+programs will support large files just fine.
+
+<p>See the next question if you have inadvertantly created a large file and
+now need some way to deal with it.
+
+<p><hr>
+Node:<a name="Tar%20created%20a%20Large%20File%20but%20I%20can't%20remove%20it.">Tar created a Large File but I can't remove it.</a>,
+Previous:<a rel=previous href="#Value%20too%20large%20for%20defined%20data%20type">Value too large for defined data type</a>,
+Up:<a rel=up href="#Top">Top</a>
+<br>
+
+<h1>Tar created a Large File but I can't remove it.</h1>
+
+<p>I created a file with tar cvf backup.tar.  Trying to "rm" this file this
+is not possible.  The error message is:
+
+<pre>  rm: cannot remove `backup.tar': Value too large for defined data
+</pre>
+
+<p>What could I do to remove that file ?
+
+<p>Sometimes one utility such as <code>tar</code> will be compiled with large
+file support while another utility like <code>rm</code> will be compiled
+without.  It happens.  Which means you might find yourself with a large
+file created by one utility but unable to work with it with another.
+
+<p>At this point we need to be clever.  Find a utility that can operate on
+a large file and use it to truncate the file.  Here are several examples
+of how to work around this problem.  Of course in a perfect world you
+would recompile the utilities to support large files and not worry about
+needing a workaround.
+
+<p>This example again requires perl to be configured for large files.
+
+<pre>  perl -e 'unlink("backup.tar");'
+</pre>
+
+<p>So let's try to hit it more directly.  Truncate the file first.  That
+will make it small and then you can remove it.  The shell will do this
+when redirecting the output of commands.
+
+<pre>  true &gt; backup.tar
+  rm backup.tar
+</pre>
+
+<p>However, if your shell was not compiled for large files then the
+redirection will fail.  In that case we have to resort to more subtle
+methods.  Since tar created the file then tar must be configured to
+support large files.  Use that to your advantage to truncate the file.
+
+<pre>  touch /tmp/junk
+  tar cvf backup.tar /tmp/junk
+</pre>
+
+</body></html>
+
