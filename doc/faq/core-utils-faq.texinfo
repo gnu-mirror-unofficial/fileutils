@@ -4,7 +4,7 @@
 @settitle GNU Core Utilities Frequently Asked Questions
 @c %**end of header
 
-@c $Revision: 1.8 $ $Date: 2002/02/09 18:34:58 $
+@c $Revision: 1.9 $ $Date: 2002/02/09 18:39:25 $
 
 @node Top, Three packages are confusing!, (dir), (dir)
 @top
@@ -24,6 +24,9 @@ it, that we might implement a
 @uref{http://www.usenix.org/publications/login/1998-6/faq.html,FAQ-o-matic}
 type system.  I am interested in any comments you might have on this
 topic.
+
+This document is available online at
+@uref{http://www.gnu.org/software/fileutils/doc/faq/core-utils-faq.html}.
 
 This FAQ was written by Bob Proulx
 @uref{mailto:bob@@proulx.com,<bob@@proulx.com>} as an amalgamation of
