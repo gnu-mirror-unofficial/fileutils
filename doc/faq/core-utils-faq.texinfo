@@ -4,7 +4,7 @@
 @settitle GNU Core Utilities Frequently Asked Questions
 @c %**end of header
 
-@c $Revision: 1.2 $ $Date: 2001/12/04 09:13:35 $
+@c $Revision: 1.3 $ $Date: 2001/12/04 09:24:21 $
 
 @node Top, Three packages are confusing!, (dir), (dir)
 @top
@@ -635,7 +635,7 @@ that match filenames.  It expands them before any program can see
 them.  This is therefore common to all programs on most UNIX-like
 operating systems.  It cannot exceed the OS limit of ARG_MAX and if it
 tries to do so the error "Argument list too long" is returned to the
-shell and the shell returns it to your.
+shell and the shell returns it to you.
 
 This is not a bug in 'mv' or other utilitities nor is it a bug in 'bash'
 or any other shell.  It is an architecture limitation of UNIX-like
