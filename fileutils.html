@@ -12,36 +12,96 @@ ALT=" [image of the Head of a GNU] "
 WIDTH="129" HEIGHT="122"></A>
 
 <P>
-The tools supplied with the Fileutils package are:
-<P><UL>
-<LI><B>chgrp</B> - Changes file group ownership.<P>
-<LI><B>chown</B> - Changes file ownership.<P>
-<LI><B>chmod</B> - Changes file permissions.<P>
-<LI><B>cp</B> - Copies files.<P>
-<LI><B>dd</B> - Copies and converts a file.<P>
-<LI><B>df</B> - Shows filesystem disk usage.<P>
-<LI><B>dir</B> - Gives a brief directory listing.<P>
-<LI><B>dircolors</B> - Setup program for the color version of GNU ls.<P>
-<LI><B>du</B> - Shows disk usage.<P>
-<LI><B>install</B> - Copies file and sets its permissions.<P>
-<LI><B>ln</B> - Creates file links.<P>
-<LI><B>ls</B> - Lists directory contents.<P>
-<LI><B>mkdir</B> - Creates directories.<P>
-<LI><B>mkfifo</B> - Creates FIFOs (named pipes).<P>
-<LI><B>mknod</B> - Creates special files.<P>
-<LI><B>mv</B> - Renames files.<P>
-<LI><B>rm</B> - Removes (deletes) files.<P>
-<LI><B>rmdir</B> - Removes empty directories.<P>
-<LI><B>sync</B> - Synchronizes memory and disk.<P>
-<LI><B>touch</B> - Changes file timestamps.<P>
-<LI><B>vdir</B> - Long directory listing (like ls -l).
-</UL>
+The GNU File Utililities are a set of tools which comprise the basic
+core file manipulation utilities traditionaly found on UNIX operating
+systems.
 
 <P>
-Online Manual for these utilities is available at 
-<A HREF="/manual/fileutils/index.html">www.gnu.org/manual/fileutils/index.html</A>
+The tools supplied with the Fileutils package are:
+<P><UL>
+<LI><B>chgrp</B> - Changes file group ownership.
+<LI><B>chown</B> - Changes file ownership.
+<LI><B>chmod</B> - Changes file permissions.
+<LI><B>cp</B> - Copies files.
+<LI><B>dd</B> - Copies and converts a file.
+<LI><B>df</B> - Shows disk free space on filesystems.
+<LI><B>dir</B> - Gives a brief directory listing.
+<LI><B>dircolors</B> - Setup program for the color output of GNU ls.
+<LI><B>du</B> - Shows disk usage on filesystems.
+<LI><B>install</B> - Copies file and sets its permissions.
+<LI><B>ln</B> - Creates file links.
+<LI><B>ls</B> - Lists directory contents.
+<LI><B>mkdir</B> - Creates directories.
+<LI><B>mkfifo</B> - Creates FIFOs (named pipes).
+<LI><B>mknod</B> - Creates special files.
+<LI><B>mv</B> - Moves files.
+<LI><B>rm</B> - Removes (deletes) files.
+<LI><B>rmdir</B> - Removes empty directories.
+<LI><B>shred</B> - Destroy data in files.
+<LI><B>sync</B> - Synchronizes filesystem buffers and disk.
+<LI><B>touch</B> - Changes file timestamps.
+<LI><B>vdir</B> - Long directory listing.
+</UL>
 
 
+<H4>Online Manual</H4>
+
+<P>
+Online Manual for these utilities is available at <A
+HREF="doc/manual/html/fileutils.html">
+http://www.gnu.org/software/fileutils/doc/manual/html/fileutils.html</A>.
+The manual is also available in the info system on almost all
+platforms where GNU utilities are installed.  Use <em>info</em> to
+access the top level info page and <em>info File</em> to access the
+file utilities section.
+
+
+<H4>Frequently Asked Questions</H4>
+
+<P>
+Please check the <A HREF="doc/faq/core-utils-faq.html">FAQ for the
+core utilities</A> for answers to your most frequently asked
+questions.  This FAQ contains answers to questions asked on the
+mailing lists and newsgroups.
+
+
+<H4>Downloading</H4>
+
+Released versions of GNU fileutils can be found in the subdirectory
+<CODE>/gnu/fileutils/</CODE> on your favorite <A
+HREF="/prep/ftp.html">GNU mirror</A>. For other ways to obtain
+fileutils, please read <A
+HREF="/software/software.html#HowToGetSoftware">How to get GNU
+Software</A>
+
+<P>Testing versions of alpha releases can be found on the alpha
+release server.  A different server is used for alpha releases so that
+people do not confuse testing snapshots and released versions.  Alpha
+test versions are available at <A
+HREF="ftp://alpha.gnu.org/pub/gnu/fileutils">
+<code>ftp://alpha.gnu.org/pub/gnu/fileutils</code> </A> Patches are
+most appreciated in unified diff format against the latest available
+testing version.
+
+
+<H4>How to Get Help</H4>
+
+<P>
+For general discussion of bugs in utils the news group <A
+HREF="news:gnu.utils.bug"><EM>gnu.utils.bug</EM></A> is probably the
+most appropriate forum.  An archive of the bug report mailing list is
+available at <A HREF="http://mail.gnu.org/pipermail/bug-fileutils/">
+<EM>http://mail.gnu.org/pipermail/bug-fileutils/</EM></A>.
+
+
+<H4>How to Help</H4>
+
+<P>
+To contact the maintainers, either to report a bug or to contribute
+fixes or improvements, send mail to <A
+HREF="mailto:bug-fileutils@gnu.org"><EM>bug-fileutils@gnu.org</EM></A>.
+
+<P>
 <HR>
 
 Return to <A HREF="/home.html">GNU's home page</A>.
