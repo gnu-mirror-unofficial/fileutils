@@ -4,7 +4,7 @@
 @settitle GNU Core Utilities Frequently Asked Questions
 @c %**end of header
 
-@c $Revision: 1.6 $ $Date: 2002/01/14 02:26:16 $
+@c $Revision: 1.7 $ $Date: 2002/01/22 09:29:13 $
 
 @node Top, Three packages are confusing!, (dir), (dir)
 @top
@@ -64,6 +64,7 @@ An online version is available at
 * Why doesn't rm -r *.pattern recurse like it should?::
 * Why don't the utilities have built in directory recursion?::
 * ls -d does not list directories!::
+* ls -a * does not list dot files::
 * Argument list too long::
 * I am trying to compile a C program ...::
 * I am having a problem with kill::
@@ -634,7 +635,7 @@ into other commands.
 @c direction of the spirit of UNIX.
 
 @c ---------------------------------------------------------------------------
-@node  ls -d does not list directories!, Argument list too long, Why don't the utilities have built in directory recursion?, Top
+@node  ls -d does not list directories!, ls -a * does not list dot files, Why don't the utilities have built in directory recursion?, Top
 @chapter ls -d does not list directories!
 
 I typed in @kbd{ls -dl} but it only showed me the current directory.
@@ -670,7 +671,82 @@ and contains an interface which can be used with many other programs.
 @end example
 
 @c ---------------------------------------------------------------------------
-@node Argument list too long, I am trying to compile a C program ..., ls -d does not list directories!, Top
+@node  ls -a * does not list dot files, Argument list too long, ls -d does not list directories!, Top
+@chapter ls -a * does not list dot files
+
+When I list directories using 'ls *', or even 'ls -a *' I never see
+hidden files, e.g. files with names that start with a dot as in
+.profile.
+
+The command shell expands the '*' before ever handing it to a command.
+This is regardless of it being ls as it could be any command on the
+command line.  The '*' is called the glob character because it matches
+a glob of character.  This process is called file name globbing.  This
+is documented in your shell manual.  Bash documents this well.  In the
+bash info pages look for the section titled ``Filename Expansion''.
+
+A '*' is a shell pattern and is replaced by a list of files that match
+that pattern.  Filenames that start with a '.' do not match that
+pattern.  Neither does it match a '?'.  The dot character must be
+explicitly matched when it occurs at the start of the filename.
+
+You should test what input is being given to commands by the shell
+with the @command{echo} command.  Try these patterns as starting
+examples.  Try this in your home directory where there are usually
+rich examples of dot files.
+
+@example
+  echo *
+  echo .*
+  echo .* *
+  echo .?*
+  echo .??*
+@end example
+
+As you will see from those examples the ls command is only listing out
+the files that were presented to it by the shell.  Which answers why
+the dot files were not listed.  In fact, what is ls doing that you
+can't do yourself?  Very little in this particular case.  You might as
+well use @command{echo} for listing and then you can use the
+@command{fmt} command to word wrap to your screen.  You can also use
+@command{tr} and @command{grep} to finish the job.  Suddeny using ls
+for this seems more convenient.  Especially when coupled with the -l
+option!
+
+@example
+  echo * | fmt
+  echo .* | fmt
+  echo .* * | fmt
+  echo .* * | tr " " "\012" | grep profile
+@end example
+
+Okay, now I understand why @command{ls *} did not list out hidden dot
+files.  But then how does one list out dot files?
+
+There are several ways that are typically used.  Here are a variety of
+examples that should spark ideas for you.  Try them out and compare
+and contrast their differences.
+
+@example
+  ls -a | grep profile
+  ls -d .*
+  ls -d .??*
+  ls -d .[^.]*
+  ls -d .[!.]*
+@end example
+
+Some are more convenient than others.  But dot files are @emph{meant}
+to be hidden files.  Therefore it is reasonable that you will need to
+do a little more work to unhide them.
+
+You should also read over the answers to other questions in this FAQ
+as this is a very similar theme.  Read the documentation on your
+shell.  For GNU systems @command{info bash} will launch the info system
+on the bash documentation.  I also recommend reading one of the many
+fine shell programming books available from the bookstore.
+
+@c ---------------------------------------------------------------------------
+@node Argument list too long, I am trying to compile a C program ..., ls -a * does not list dot files, Top
 @chapter Argument list too long
 
 I tried to move about 5000 files with mv, but it said:
