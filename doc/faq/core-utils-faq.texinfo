@@ -4,9 +4,9 @@
 @settitle GNU Core Utilities Frequently Asked Questions
 @c %**end of header
 
-@c $Revision: 1.13 $ $Date: 2002/07/17 07:17:53 $
+@c $Revision: 1.14 $ $Date: 2002/07/17 07:23:38 $
 
-@node Top, Three packages are confusing!, (dir), (dir)
+@node Top
 @top
 @chapter GNU Core Utilities Frequently Asked Questions
 
@@ -88,7 +88,7 @@ An online version is available at
 @end menu
 
 @c ---------------------------------------------------------------------------
-@node  Three packages are confusing!, Where can I get more information about GNU Core Utils?, Top, Top
+@node Three packages are confusing!
 @chapter Three packages are confusing!
 
 Together the three packages combined implement a core set of GNU
@@ -109,7 +109,7 @@ The official @code{textutils} home page.
 @end table
 
 @c ---------------------------------------------------------------------------
-@node  Where can I get more information about GNU Core Utils?, Where can I get the latest version of GNU fileutils?, Three packages are confusing!, Top
+@node Where can I get more information about GNU Core Utils?
 @chapter Where can I get more information about GNU Core Utils?
 
 The online @code{info} documentation is always the most up to date
@@ -164,7 +164,7 @@ will still slip and refer to one or the other at times.  If I do, please
 forgive me and make do.
 
 @c ---------------------------------------------------------------------------
-@node Where can I get the latest version of GNU fileutils?, How do I add a question to the FAQ?, Where can I get more information about GNU Core Utils?, Top
+@node Where can I get the latest version of GNU fileutils?
 @chapter Where can I get the latest version of GNU Core Utils?
 
 Okay I was wrong.  There is still another enumerated list of locations.
@@ -191,7 +191,7 @@ helps to report any bugs as seen against those versions as those are the
 ones in current development.
 
 @c ---------------------------------------------------------------------------
-@node How do I add a question to the FAQ?, How do I report a bug?, Where can I get the latest version of GNU fileutils?, Top
+@node How do I add a question to the FAQ?
 @chapter How do I add a question to the FAQ?
 
 Send a plain text e-mail to one of the bug lists enumerated above.  Also
@@ -205,7 +205,7 @@ response your message will have been read by the maintainers.  But so
 many messages are posted that it can be overwhelming for us at times.
 
 @c ---------------------------------------------------------------------------
-@node How do I report a bug?, I reported a bug but did not get a response., How do I add a question to the FAQ?, Top
+@node How do I report a bug?
 @chapter How do I report a bug?
 
 Please be sure that the bug you are reporting is actually related to the
@@ -269,7 +269,7 @@ not feel comfortable at the source code level reports of bugs are always
 welcome.
 
 @c ---------------------------------------------------------------------------
-@node  I reported a bug but did not get a response., I use the Cygwin toolset and I have a problem., How do I report a bug?, Top
+@node I reported a bug but did not get a response.
 @chapter I reported a bug but did not get a response.
 
 It may just be that the volunteers are busy.  Please be patient.  Every
@@ -287,7 +287,7 @@ deciphered.  If it does not show up as plain text in the archive then it
 did not get sent to the list in plain text format.
 
 @c ---------------------------------------------------------------------------
-@node I use the Cygwin toolset and I have a problem., Why can only root chown files?, I reported a bug but did not get a response., Top
+@node I use the Cygwin toolset and I have a problem.
 @chapter I use the Cygwin toolset and I have a problem.
 
 The hard work the Cygwin team has put in to developing the GNU Project
@@ -311,7 +311,7 @@ reporting.
 @end table
 
 @c ---------------------------------------------------------------------------
-@node Why can only root chown files?, chown fails when the username contains a '.' in it., I use the Cygwin toolset and I have a problem., Top
+@node Why can only root chown files?
 @chapter Why can only root chown files?
 
 The GNU chown program will change the ownership if the operating system
@@ -379,14 +379,14 @@ by a user, chowned, and then could not be removed by the user.  A sticky
 you should have the other as well.
 
 @c ---------------------------------------------------------------------------
-@node chown fails when the username contains a '.' in it., How do I remove files that start with a '-' such as '-i'?, Why can only root chown files?, Top
+@node chown fails when the username contains a '.' in it.
 @chapter chown fails when the username contains a '.' in it.
 
 That was fixed in test releases for fileutils-4.1.  Newer versions fix
 that problem.
 
 @c ---------------------------------------------------------------------------
-@node How do I remove files that start with a '-' such as '-i'?, I have a file called @option{--help}, chown fails when the username contains a '.' in it., Top
+@node How do I remove files that start with a '-' such as '-i'?
 @chapter How do I remove files that start with a '-' such as '-i'?
 
 Since the file name begins with a '-' it looks like an option to the
@@ -409,7 +409,7 @@ And the same for other utilities too.
 @end example
 
 @c ---------------------------------------------------------------------------
-@node  I have a file called @option{--help}, I have a file '-f' and it affects rm., How do I remove files that start with a '-' such as '-i'?, Top
+@node I have a file called @option{--help}
 @chapter I have a file called @option{--help}, how do I remove it?
 
 This is just a variant of the previous question.  It also applies to
@@ -432,7 +432,7 @@ I don't personally like this and don't recommend it.
 
 
 @c ---------------------------------------------------------------------------
-@node  I have a file '-f' and it affects rm., Why doesn't rm -r *.pattern recurse like it should?, I have a file called @option{--help}, Top
+@node I have a file '-f' and it affects rm.
 @chapter I have a file '-f' and it affects rm.
 
 I have a directory containing some files and also '-f' as a filename and
@@ -474,7 +474,7 @@ do one of the following:
 See the previous question with regards to a filename @file{-i}.
 
 @c ---------------------------------------------------------------------------
-@node Why doesn't rm -r *.pattern recurse like it should?, I used rm to remove a file.  How can I get it back now?, I have a file '-f' and it affects rm., Top
+@node Why doesn't rm -r *.pattern recurse like it should?
 @chapter Why doesn't rm -r *.pattern recurse like it should?
 
 This question is asked a number of ways:
@@ -586,7 +586,7 @@ equivalent to the following question which might be easier to understand
 what is going on.
 
 @c ---------------------------------------------------------------------------
-@node  I used rm to remove a file.  How can I get it back now?, Why don't the utilities have built in directory recursion?, Why doesn't rm -r *.pattern recurse like it should?, Top
+@node I used rm to remove a file.  How can I get it back now?
 @chapter I used rm to remove a file.  How can I get it back now?
 
 It is extremely unlikely that you will be able to recover a file from
@@ -605,7 +605,7 @@ lazarus.
 @uref{http://www.porcupine.org/forensics/tct.html}
 
 @c ---------------------------------------------------------------------------
-@node  Why don't the utilities have built in directory recursion?, ls -d does not list directories!, I used rm to remove a file.  How can I get it back now?, Top
+@node Why don't the utilities have built in directory recursion?
 @chapter Why don't the utilities have built in directory recursion?
 
 @c FIXME: Need to punch up this section a lot.  It is in serious need.
@@ -668,7 +668,7 @@ into other commands.
 @c direction of the spirit of UNIX.
 
 @c ---------------------------------------------------------------------------
-@node  ls -d does not list directories!, ls -a * does not list dot files, Why don't the utilities have built in directory recursion?, Top
+@node ls -d does not list directories!
 @chapter ls -d does not list directories!
 
 I typed in @kbd{ls -dl} but it only showed me the current directory.
@@ -704,7 +704,7 @@ and contains an interface which can be used with many other programs.
 @end example
 
 @c ---------------------------------------------------------------------------
-@node  ls -a * does not list dot files, Argument list too long, ls -d does not list directories!, Top
+@node ls -a * does not list dot files
 @chapter ls -a * does not list dot files
 
 When I list directories using 'ls *', or even 'ls -a *' I never see
@@ -779,7 +779,7 @@ on the bash documentation.  I also recommend reading one of the many
 fine shell programming books available from the bookstore.
 
 @c ---------------------------------------------------------------------------
-@node Argument list too long, I am trying to compile a C program ..., ls -a * does not list dot files, Top
+@node Argument list too long
 @chapter Argument list too long
 
 I tried to move about 5000 files with mv, but it said:
@@ -833,7 +833,7 @@ is avoided.
 Read the previous question for another facet of this problem.
 
 @c ---------------------------------------------------------------------------
-@node  I am trying to compile a C program ..., I am having a problem with kill, Argument list too long, Top
+@node I am trying to compile a C program ...
 @chapter I am trying to compile a C program program ...
 
 This frequently occurs with a question such as, I have found a bug in
@@ -903,7 +903,7 @@ loyal following and are quite useful for reference.  But they make poor
 user guides.
 
 @c ---------------------------------------------------------------------------
-@node  I am having a problem with kill, Sort does not sorting in normal order!, I am trying to compile a C program ..., Top
+@node I am having a problem with kill
 @chapter I am having a problem with kill, nice, pwd, sleep, or test.
 
 This is frequently a variant of the previous question.  Go read it first
@@ -934,7 +934,7 @@ However, those utilities are also built into most shells in order to
 improve the speed performance.
 
 @c ---------------------------------------------------------------------------
-@node  Sort does not sorting in normal order!, The ls command is not listing files in a normal order!, I am having a problem with kill, Top
+@node Sort does not sorting in normal order!
 @chapter Sort does not sorting in normal order!
 
 This one question arises almost more often than any other.  It is due to
@@ -984,7 +984,7 @@ variables with regards to sort.
 @uref{http://www.unix-systems.org/single_unix_specification_v2/xcu/sort.html}
 
 @c ---------------------------------------------------------------------------
-@node  The ls command is not listing files in a normal order!, The date command is not working right., Sort does not sorting in normal order!, Top
+@node The ls command is not listing files in a normal order!
 @chapter The ls command is not listing files in a normal order!
 
 This is just a variant of the previous question.  Any program that is
@@ -997,7 +997,7 @@ variables with regards to ls.
 @uref{http://www.unix-systems.org/single_unix_specification_v2/xcu/ls.html}
 
 @c ---------------------------------------------------------------------------
-@node  The date command is not working right., ln -s did not link my files together, The ls command is not listing files in a normal order!, Top
+@node The date command is not working right.
 @chapter The date command is not working right.
 
 If you are using date version 2.0 or earlier that is certainly
@@ -1007,7 +1007,7 @@ the code.  The test release versions at
 @uref{ftp://alpha.gnu.org/gnu/fetish} are best.
 
 @c ---------------------------------------------------------------------------
-@node  ln -s did not link my files together, How do I change the ownership or permissions of a symlink?, The date command is not working right., Top
+@node ln -s did not link my files together
 @chapter ln -s did not link my files together
 
 @c Hmm...  This just does not convey the problem I was trying to answer.
@@ -1027,7 +1027,7 @@ the location is network independent and will work desirably across NFS
 mounted filesystems.
 
 @c ---------------------------------------------------------------------------
-@node  How do I change the ownership or permissions of a symlink?, Value too large for defined data type, ln -s did not link my files together, Top
+@node How do I change the ownership or permissions of a symlink?
 @chapter How do I change the ownership or permissions of a symlink?
 
 The owner, group, and permissions of a symlink are not in any way
@@ -1037,7 +1037,7 @@ mode of a symlink and other operating systems will not.  Do not worry
 about it as it does not matter in any case.
 
 @c ---------------------------------------------------------------------------
-@node  Value too large for defined data type, Tar created a Large File but I can't remove it., How do I change the ownership or permissions of a symlink?, Top
+@node Value too large for defined data type
 @chapter Value too large for defined data type
 
 It means that your version of the utilities were not compiled with large
@@ -1077,7 +1077,7 @@ See the next question if you have inadvertently created a large file and
 now need some way to deal with it.
 
 @c ---------------------------------------------------------------------------
-@node Tar created a Large File but I can't remove it., The 'od -x' command prints bytes in the wrong order., Value too large for defined data type, Top
+@node Tar created a Large File but I can't remove it.
 @chapter Tar created a Large File but I can't remove it.
 
 I created a file with tar cvf backup.tar.  Trying to "rm" this file this
@@ -1126,7 +1126,7 @@ support large files.  Use that to your advantage to truncate the file.
 @end example
 
 @c ---------------------------------------------------------------------------
-@node  The 'od -x' command prints bytes in the wrong order.,  , Tar created a Large File but I can't remove it., Top
+@node The 'od -x' command prints bytes in the wrong order.
 @chapter The 'od -x' command prints bytes in the wrong order.
 
 That is the required behavior depending upon the endianess of the
