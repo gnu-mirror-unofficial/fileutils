@@ -4,7 +4,7 @@
 @settitle GNU Core Utilities Frequently Asked Questions
 @c %**end of header
 
-@c $Revision: 1.1 $ $Date: 2001/11/13 10:13:52 $
+@c $Revision: 1.2 $ $Date: 2001/12/04 09:13:35 $
 
 @node Top, Three packages are confusing!, (dir), (dir)
 @top
@@ -89,7 +89,7 @@ name with no difficulty.
 @item http://www.gnu.org/software/fileutils/
 The official @code{fileutils} home page.
 
-@item http://www.gnu.org/software/sh-utils/
+@item http://www.gnu.org/software/shellutils/
 The official @code{sh-utils} home page.
 
 @item http://www.gnu.org/software/textutils/
