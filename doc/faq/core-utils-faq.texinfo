@@ -4,7 +4,7 @@
 @settitle GNU Core Utilities Frequently Asked Questions
 @c %**end of header
 
-@c $Revision: 1.16 $ $Date: 2002/10/13 17:24:59 $
+@c $Revision: 1.17 $ $Date: 2002/11/03 01:33:41 $
 
 @node Top
 @top
@@ -354,11 +354,10 @@ restrictions, like root.  You can always copy the files back and then
 you own them again.  This effectively defeats any quota system if
 allowed.
 
-@item
-You can deny someone else service with a denial of service attack by
-using all of their quota until they cannot create any files.  You use up
-their quote by chowning files to them someplace where they cannot find
-them.
+Alto, you can deny someone else service with a denial of service
+attack by using all of their quota until they cannot create any files.
+You use up their quote by chowning files to them someplace where they
+cannot find them.
 
 @item
 A user can create files that they cannot remove.  With the old semantics
@@ -370,8 +369,8 @@ problem when untaring files that other people created with restrictive
 file permissions.  The new semantics avoid this problem entirely.
 Therefore most systems today have been changed to disallow giving file
 ownership away.  But as noted it has not always been that way.
-@end enumerate
 
+@item
 Additionally systems need to restrict who can remove files from system
 temporary directories such as /tmp.  Otherwise anyone could remove any
 file there which might disrupt system processes.  Some programs might
@@ -383,6 +382,8 @@ chown is allowed then /tmp is another place that file could be created
 by a user, chowned, and then could not be removed by the user.  A sticky
 /tmp and a rectricted chown policy go together.  If you have one then
 you should have the other as well.
+
+@end enumerate
 
 @c ---------------------------------------------------------------------------
 @node chown fails when the username contains a '.' in it.
@@ -629,7 +630,15 @@ On Debian systems:
 
 See also ``Linux Ext2fs Undeletion mini-HOWTO'' by Aaron Crane at
 @uref{http://www.tldp.org/HOWTO/mini/Ext2fs-Undeletion.html}.  This
-contains very useful information about this topic.
+contains very useful information about this topic.  This may already
+be present on your system at
+@file{/usr/share/doc/HOWTO/en-txt/mini/Ext2fs-Undeletion.gz} or might
+be found other places using the @code{locate Ext2fs-Undeletion}
+command.
+
+@example
+  less /usr/share/doc/HOWTO/en-txt/mini/Ext2fs-Undeletion.gz
+@end example
 
 You don't want your files to be recovered and you want them to stay
 deleted?  The GNU core utilities include a utility called @code{shred}

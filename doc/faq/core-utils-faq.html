@@ -395,12 +395,12 @@ restrictions, like root.  You can always copy the files back and then
 you own them again.  This effectively defeats any quota system if
 allowed.
 
-<li>You can deny someone else service with a denial of service attack by
-using all of their quota until they cannot create any files.  You use up
-their quote by chowning files to them someplace where they cannot find
-them.
+<p>Alto, you can deny someone else service with a denial of service
+attack by using all of their quota until they cannot create any files. 
+You use up their quote by chowning files to them someplace where they
+cannot find them.
 
-<li>A user can create files that they cannot remove.  With the old semantics
+</p><li>A user can create files that they cannot remove.  With the old semantics
 it was possible for normal users to create situations that only the
 superuser could fix.  Such as creating a non-writable directory of files
 and then giving the ownership away.  Since they no longer own the files
@@ -409,9 +409,8 @@ problem when untaring files that other people created with restrictive
 file permissions.  The new semantics avoid this problem entirely. 
 Therefore most systems today have been changed to disallow giving file
 ownership away.  But as noted it has not always been that way.
-</ol>
 
-<p>Additionally systems need to restrict who can remove files from system
+<li>Additionally systems need to restrict who can remove files from system
 temporary directories such as /tmp.  Otherwise anyone could remove any
 file there which might disrupt system processes.  Some programs might
 even have security issues associated with this.  Therefore modern
@@ -422,6 +421,8 @@ chown is allowed then /tmp is another place that file could be created
 by a user, chowned, and then could not be removed by the user.  A sticky
 /tmp and a rectricted chown policy go together.  If you have one then
 you should have the other as well.
+
+</ol>
 
 <p><hr>
 Node:<a name="chown%20fails%20when%20the%20username%20contains%20a%20'.'%20in%20it.">chown fails when the username contains a '.' in it.</a>,
@@ -683,7 +684,14 @@ homepage has a link to a manual way to retrieve deleted files.
 
 <p>See also "Linux Ext2fs Undeletion mini-HOWTO" by Aaron Crane at
 <a href="http://www.tldp.org/HOWTO/mini/Ext2fs-Undeletion.html">http://www.tldp.org/HOWTO/mini/Ext2fs-Undeletion.html</a>.  This
-contains very useful information about this topic.
+contains very useful information about this topic.  This may already
+be present on your system at
+<code>/usr/share/doc/HOWTO/en-txt/mini/Ext2fs-Undeletion.gz</code> or might
+be found other places using the <code>locate Ext2fs-Undeletion</code>
+command.
+
+<br><pre>  less /usr/share/doc/HOWTO/en-txt/mini/Ext2fs-Undeletion.gz
+</pre>
 
 <p>You don't want your files to be recovered and you want them to stay
 deleted?  The GNU core utilities include a utility called <code>shred</code>
