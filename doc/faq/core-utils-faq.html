@@ -61,6 +61,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 <li><a href="#Where%20can%20I%20get%20the%20latest%20version%20of%20GNU%20fileutils%3f">Where can I get the latest version of GNU fileutils?</a>: 
 <li><a href="#How%20do%20I%20add%20a%20question%20to%20the%20FAQ%3f">How do I add a question to the FAQ?</a>: 
 <li><a href="#How%20do%20I%20report%20a%20bug%3f">How do I report a bug?</a>: 
+<li><a href="#I%20reported%20a%20bug%20but%20did%20not%20get%20a%20response.">I reported a bug but did not get a response.</a>: 
 <li><a href="#I%20use%20the%20Cygwin%20port%20and%20I%20have%20a%20problem.">I use the Cygwin port and I have a problem.</a>: 
 <li><a href="#Why%20can%20only%20root%20chown%20files%3f">Why can only root chown files?</a>: 
 <li><a href="#chown%20fails%20when%20the%20username%20contains%20a%20'.'%20in%20it.">chown fails when the username contains a '.' in it.</a>: 
@@ -206,15 +207,18 @@ Up:<a rel=up href="#Top">Top</a>
 <h1>How do I add a question to the FAQ?</h1>
 
 <p>Send a plain text e-mail to one of the bug lists enumerated above.  Also
-with the answer if you have one.  Do <em>not</em> send HTML encoded
-messages.  Please allow some time for processing.  Many people read the
-mail so please try to be concise.  Even if you do not receive a personal
+with the answer if you have one.  Please make sure the message is
+formatted as a plain text message.  Do <em>not</em> send HTML encoded
+messages.
+
+<p>Please allow some time for processing.  Many people read the mail so
+please try to be concise.  Even if you do not receive a personal
 response your message will have been read by the maintainers.  But so
 many messages are posted that it can be overwhelming for us at times.
 
 <p><hr>
 Node:<a name="How%20do%20I%20report%20a%20bug%3f">How do I report a bug?</a>,
-Next:<a rel=next href="#I%20use%20the%20Cygwin%20port%20and%20I%20have%20a%20problem.">I use the Cygwin port and I have a problem.</a>,
+Next:<a rel=next href="#I%20reported%20a%20bug%20but%20did%20not%20get%20a%20response.">I reported a bug but did not get a response.</a>,
 Previous:<a rel=previous href="#How%20do%20I%20add%20a%20question%20to%20the%20FAQ%3f">How do I add a question to the FAQ?</a>,
 Up:<a rel=up href="#Top">Top</a>
 <br>
@@ -257,10 +261,19 @@ is simply <strong>bug</strong>.
 
 <p>In your description indicate the version of the program that you are
 seeing with the problem.  Also note the operating system type and
-version.  The GNU utilities run on many different types of systems and
-some problems will be unique to them.  We are good at guessing your
+version.  The GNU utilities are part of the GNU Operating System but
+have been ported to run standalone on many different types of systems
+and some problems will be unique to them.  We are good at guessing your
 environment but it is much simpler if we have the information without
 guessing.
+
+<p>Please make sure the message is formatted as a plain text message.  Do
+<em>not</em> send HTML encoded messages.  Do not send overly large
+messages without first establishing contact.  Once someone found a way
+to trigger a problem with sort by giving it a 200MB sized file.  They
+sent that datafile to the mailing list.  Needless to say that was not
+appreciated.  People on limited bandwidth connections reading the list
+were severely effected.
 
 <p>Include as small of a test case as you can manage to create that will
 allow others to recreate the problem.  If the problem cannot be
@@ -271,9 +284,32 @@ not feel comfortable at the source code level reports of bugs are always
 welcome.
 
 <p><hr>
+Node:<a name="I%20reported%20a%20bug%20but%20did%20not%20get%20a%20response.">I reported a bug but did not get a response.</a>,
+Next:<a rel=next href="#I%20use%20the%20Cygwin%20port%20and%20I%20have%20a%20problem.">I use the Cygwin port and I have a problem.</a>,
+Previous:<a rel=previous href="#How%20do%20I%20report%20a%20bug%3f">How do I report a bug?</a>,
+Up:<a rel=up href="#Top">Top</a>
+<br>
+
+<h1>I reported a bug but did not get a response.</h1>
+
+<p>It may just be that the volunteers are busy.  Please be patient.  Every
+message to the bug lists are read by many people.  Sometimes there is
+just nothing to say at the time.
+
+<p>But if you think your message might not have made it to the list or that
+you may have missed the response then check the mail archives as
+described above.  If you do not see your message there then we did not
+see it either.
+
+<p>Or perhaps your formatting was such that it was unreadable.  A number of
+posts are unreadable because the text was encoded and it could not be
+deciphered.  If it does not show up as plain text in the archive then it
+did not get sent to the list in plain text format.
+
+<p><hr>
 Node:<a name="I%20use%20the%20Cygwin%20port%20and%20I%20have%20a%20problem.">I use the Cygwin port and I have a problem.</a>,
 Next:<a rel=next href="#Why%20can%20only%20root%20chown%20files%3f">Why can only root chown files?</a>,
-Previous:<a rel=previous href="#How%20do%20I%20report%20a%20bug%3f">How do I report a bug?</a>,
+Previous:<a rel=previous href="#I%20reported%20a%20bug%20but%20did%20not%20get%20a%20response.">I reported a bug but did not get a response.</a>,
 Up:<a rel=up href="#Top">Top</a>
 <br>
 
@@ -304,6 +340,11 @@ Up:<a rel=up href="#Top">Top</a>
 
 <h1>Why can only root chown files?</h1>
 
+<p>The GNU chown program will change the ownership if the operating system
+it is running upon allows it.  If you can't change file ownership then
+it is the operating system which is restricting you and not the chown
+program.
+
 <p>Actually, the GNU chown command does not know if this is the policy of
 the system or not.  It calls the kernel system call chown() just like
 any other program (e.g. perl, ruby, etc.)  If the OS allows it then it
@@ -318,24 +359,47 @@ documenting this is that GNU chown does not know which it will be
 running on.  It could be one or it could be the other.  Or it might even
 be running on a system without the concept of file ownership at all! 
 This is really an OS policy decision and it is hard to track
-documentation to be different on different systems.
+documentation to be different on different systems.  But the according
+to GNU documentation standards the documentation must be independent of
+operating system.
 
-<p>The reason to restrict ownership is mostly threefold.  One is that
-people have used this to avoid disk space quota restrictions.  Give the
-file to someone (like root) with disk quota to spare.  Two is that you
-can deny someone service by using all of their quota until they cannot
-create any files.  Three is that a user can create files that they
-cannot remove.
+<p>The reason an operating system needs to restrict changing ownership is
+mostly threefold.
 
-<p>With the old semantics it was possible for normal users to create
-situations that only the superuser could fix.  Such as creating a
-non-writable directory of files and then giving the ownership away. 
-Since they no longer own the files they can't change them, nor can they
-remove them.  This is commonly a problem when untaring files that other
-people created with restrictive file permissions.  The new semantics
-avoid this problem entirely.  Therefore most systems today have been
-changed to disallow giving file ownership away.  But as noted it has not
-always been that way.
+<ol type=1 start=1>
+</p><li>People have used this to avoid disk space quota restrictions.  Give the
+file to someone either with disk quota to spare or without any quota
+restrictions, like root.  You can always copy the files back and then
+you own them again.  This effectively defeats any quota system if
+allowed.
+
+<li>You can deny someone else service with a denial of service attack by
+using all of their quota until they cannot create any files.  You use up
+their quote by chowning files to them someplace where they cannot find
+them.
+
+<li>A user can create files that they cannot remove.  With the old semantics
+it was possible for normal users to create situations that only the
+superuser could fix.  Such as creating a non-writable directory of files
+and then giving the ownership away.  Since they no longer own the files
+they can't change them, nor can they remove them.  This is commonly a
+problem when untaring files that other people created with restrictive
+file permissions.  The new semantics avoid this problem entirely. 
+Therefore most systems today have been changed to disallow giving file
+ownership away.  But as noted it has not always been that way.
+</ol>
+
+<p>Additionally systems need to restrict who can remove files from system
+temporary directories such as /tmp.  Otherwise anyone could remove any
+file there which might disrupt system processes.  Some programs might
+even have security issues associated with this.  Therefore modern
+systems set the 'sticky' bit on /tmp.  This is the 't' bit.  On
+directories this prevents users from removing or renaming a file unless
+they own the file or directory.  The reason this is important is that if
+chown is allowed then /tmp is another place that file could be created
+by a user, chowned, and then could not be removed by the user.  A sticky
+/tmp and a rectricted chown policy go together.  If you have one then
+you should have the other as well.
 
 <p><hr>
 Node:<a name="chown%20fails%20when%20the%20username%20contains%20a%20'.'%20in%20it.">chown fails when the username contains a '.' in it.</a>,

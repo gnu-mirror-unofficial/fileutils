@@ -4,7 +4,7 @@
 @settitle GNU Core Utilities Frequently Asked Questions
 @c %**end of header
 
-@c $Revision: 1.5 $ $Date: 2002/01/14 01:49:06 $
+@c $Revision: 1.6 $ $Date: 2002/01/14 02:26:16 $
 
 @node Top, Three packages are confusing!, (dir), (dir)
 @top
@@ -54,6 +54,7 @@ An online version is available at
 * Where can I get the latest version of GNU fileutils?::
 * How do I add a question to the FAQ?::
 * How do I report a bug?::
+* I reported a bug but did not get a response.::
 * I use the Cygwin port and I have a problem.::
 * Why can only root chown files?::
 * chown fails when the username contains a '.' in it.::
@@ -183,14 +184,17 @@ ones in current development.
 @chapter How do I add a question to the FAQ?
 
 Send a plain text e-mail to one of the bug lists enumerated above.  Also
-with the answer if you have one.  Do @emph{not} send HTML encoded
-messages.  Please allow some time for processing.  Many people read the
-mail so please try to be concise.  Even if you do not receive a personal
+with the answer if you have one.  Please make sure the message is
+formatted as a plain text message.  Do @emph{not} send HTML encoded
+messages.
+
+Please allow some time for processing.  Many people read the mail so
+please try to be concise.  Even if you do not receive a personal
 response your message will have been read by the maintainers.  But so
 many messages are posted that it can be overwhelming for us at times.
 
 @c ---------------------------------------------------------------------------
-@node How do I report a bug?, I use the Cygwin port and I have a problem., How do I add a question to the FAQ?, Top
+@node How do I report a bug?, I reported a bug but did not get a response., How do I add a question to the FAQ?, Top
 @chapter How do I report a bug?
 
 Please be sure that the bug you are reporting is actually related to the
@@ -231,10 +235,19 @@ Bad examples:
 
 In your description indicate the version of the program that you are
 seeing with the problem.  Also note the operating system type and
-version.  The GNU utilities run on many different types of systems and
-some problems will be unique to them.  We are good at guessing your
+version.  The GNU utilities are part of the GNU Operating System but
+have been ported to run standalone on many different types of systems
+and some problems will be unique to them.  We are good at guessing your
 environment but it is much simpler if we have the information without
 guessing.
+
+Please make sure the message is formatted as a plain text message.  Do
+@emph{not} send HTML encoded messages.  Do not send overly large
+messages without first establishing contact.  Once someone found a way
+to trigger a problem with sort by giving it a 200MB sized file.  They
+sent that datafile to the mailing list.  Needless to say that was not
+appreciated.  People on limited bandwidth connections reading the list
+were severely effected.
 
 Include as small of a test case as you can manage to create that will
 allow others to recreate the problem.  If the problem cannot be
@@ -245,7 +258,25 @@ not feel comfortable at the source code level reports of bugs are always
 welcome.
 
 @c ---------------------------------------------------------------------------
-@node I use the Cygwin port and I have a problem., Why can only root chown files?, How do I report a bug?, Top
+@node  I reported a bug but did not get a response., I use the Cygwin port and I have a problem., How do I report a bug?, Top
+@chapter I reported a bug but did not get a response.
+
+It may just be that the volunteers are busy.  Please be patient.  Every
+message to the bug lists are read by many people.  Sometimes there is
+just nothing to say at the time.
+
+But if you think your message might not have made it to the list or that
+you may have missed the response then check the mail archives as
+described above.  If you do not see your message there then we did not
+see it either.
+
+Or perhaps your formatting was such that it was unreadable.  A number of
+posts are unreadable because the text was encoded and it could not be
+deciphered.  If it does not show up as plain text in the archive then it
+did not get sent to the list in plain text format.
+
+@c ---------------------------------------------------------------------------
+@node I use the Cygwin port and I have a problem., Why can only root chown files?, I reported a bug but did not get a response., Top
 @chapter I use the Cygwin port and I have a problem.
 
 The hard work the Cygwin team has put in to porting the GNU utilities to
@@ -268,6 +299,11 @@ reporting.
 @node Why can only root chown files?, chown fails when the username contains a '.' in it., I use the Cygwin port and I have a problem., Top
 @chapter Why can only root chown files?
 
+The GNU chown program will change the ownership if the operating system
+it is running upon allows it.  If you can't change file ownership then
+it is the operating system which is restricting you and not the chown
+program.
+
 Actually, the GNU chown command does not know if this is the policy of
 the system or not.  It calls the kernel system call chown() just like
 any other program (e.g. perl, ruby, etc.)  If the OS allows it then it
@@ -282,24 +318,50 @@ documenting this is that GNU chown does not know which it will be
 running on.  It could be one or it could be the other.  Or it might even
 be running on a system without the concept of file ownership at all!
 This is really an OS policy decision and it is hard to track
-documentation to be different on different systems.
+documentation to be different on different systems.  But the according
+to GNU documentation standards the documentation must be independent of
+operating system.
 
-The reason to restrict ownership is mostly threefold.  One is that
-people have used this to avoid disk space quota restrictions.  Give the
-file to someone (like root) with disk quota to spare.  Two is that you
-can deny someone service by using all of their quota until they cannot
-create any files.  Three is that a user can create files that they
-cannot remove.
+The reason an operating system needs to restrict changing ownership is
+mostly threefold.
 
-With the old semantics it was possible for normal users to create
-situations that only the superuser could fix.  Such as creating a
-non-writable directory of files and then giving the ownership away.
-Since they no longer own the files they can't change them, nor can they
-remove them.  This is commonly a problem when untaring files that other
-people created with restrictive file permissions.  The new semantics
-avoid this problem entirely.  Therefore most systems today have been
-changed to disallow giving file ownership away.  But as noted it has not
-always been that way.
+@enumerate
+@item
+People have used this to avoid disk space quota restrictions.  Give the
+file to someone either with disk quota to spare or without any quota
+restrictions, like root.  You can always copy the files back and then
+you own them again.  This effectively defeats any quota system if
+allowed.
+
+@item
+You can deny someone else service with a denial of service attack by
+using all of their quota until they cannot create any files.  You use up
+their quote by chowning files to them someplace where they cannot find
+them.
+
+@item
+A user can create files that they cannot remove.  With the old semantics
+it was possible for normal users to create situations that only the
+superuser could fix.  Such as creating a non-writable directory of files
+and then giving the ownership away.  Since they no longer own the files
+they can't change them, nor can they remove them.  This is commonly a
+problem when untaring files that other people created with restrictive
+file permissions.  The new semantics avoid this problem entirely.
+Therefore most systems today have been changed to disallow giving file
+ownership away.  But as noted it has not always been that way.
+@end enumerate
+
+Additionally systems need to restrict who can remove files from system
+temporary directories such as /tmp.  Otherwise anyone could remove any
+file there which might disrupt system processes.  Some programs might
+even have security issues associated with this.  Therefore modern
+systems set the 'sticky' bit on /tmp.  This is the 't' bit.  On
+directories this prevents users from removing or renaming a file unless
+they own the file or directory.  The reason this is important is that if
+chown is allowed then /tmp is another place that file could be created
+by a user, chowned, and then could not be removed by the user.  A sticky
+/tmp and a rectricted chown policy go together.  If you have one then
+you should have the other as well.
 
 @c ---------------------------------------------------------------------------
 @node chown fails when the username contains a '.' in it., How do I remove files that start with a '-' such as '-i'?, Why can only root chown files?, Top
