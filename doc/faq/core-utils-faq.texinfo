@@ -4,7 +4,7 @@
 @settitle GNU Core Utilities Frequently Asked Questions
 @c %**end of header
 
-@c $Revision: 1.12 $ $Date: 2002/04/16 03:36:31 $
+@c $Revision: 1.13 $ $Date: 2002/07/17 07:17:53 $
 
 @node Top, Three packages are confusing!, (dir), (dir)
 @top
@@ -37,7 +37,7 @@ This FAQ was written by Bob Proulx
 @uref{mailto:bob@@proulx.com,<bob@@proulx.com>} as an amalgamation of
 the many questions asked and answered on the bug lists.
 
-Copyright (C) 2001 Free Software Foundation
+Copyright (C) 2001, 2002 Free Software Foundation
 
 This document is free documentation; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as published
@@ -67,7 +67,7 @@ An online version is available at
 * Why can only root chown files?::
 * chown fails when the username contains a '.' in it.::
 * How do I remove files that start with a '-' such as '-i'?::
-* I have a file called '--help'::
+* I have a file called @option{--help}::
 * I have a file '-f' and it affects rm.::
 * Why doesn't rm -r *.pattern recurse like it should?::
 * I used rm to remove a file.  How can I get it back now?::
@@ -386,7 +386,7 @@ That was fixed in test releases for fileutils-4.1.  Newer versions fix
 that problem.
 
 @c ---------------------------------------------------------------------------
-@node How do I remove files that start with a '-' such as '-i'?, I have a file called '--help', chown fails when the username contains a '.' in it., Top
+@node How do I remove files that start with a '-' such as '-i'?, I have a file called @option{--help}, chown fails when the username contains a '.' in it., Top
 @chapter How do I remove files that start with a '-' such as '-i'?
 
 Since the file name begins with a '-' it looks like an option to the
@@ -409,8 +409,8 @@ And the same for other utilities too.
 @end example
 
 @c ---------------------------------------------------------------------------
-@node  I have a file called '--help', I have a file '-f' and it affects rm., How do I remove files that start with a '-' such as '-i'?, Top
-@chapter I have a file called '--help', how do I remove it?
+@node  I have a file called @option{--help}, I have a file '-f' and it affects rm., How do I remove files that start with a '-' such as '-i'?, Top
+@chapter I have a file called @option{--help}, how do I remove it?
 
 This is just a variant of the previous question.  It also applies to
 files named '-i' and the like.
@@ -432,7 +432,7 @@ I don't personally like this and don't recommend it.
 
 
 @c ---------------------------------------------------------------------------
-@node  I have a file '-f' and it affects rm., Why doesn't rm -r *.pattern recurse like it should?, I have a file called '--help', Top
+@node  I have a file '-f' and it affects rm., Why doesn't rm -r *.pattern recurse like it should?, I have a file called @option{--help}, Top
 @chapter I have a file '-f' and it affects rm.
 
 I have a directory containing some files and also '-f' as a filename and
