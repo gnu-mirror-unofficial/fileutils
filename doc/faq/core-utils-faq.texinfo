@@ -4,7 +4,7 @@
 @settitle GNU Core Utilities Frequently Asked Questions
 @c %**end of header
 
-@c $Revision: 1.9 $ $Date: 2002/02/09 18:39:25 $
+@c $Revision: 1.10 $ $Date: 2002/02/09 19:38:29 $
 
 @node Top, Three packages are confusing!, (dir), (dir)
 @top
@@ -19,14 +19,14 @@ answer please send a message to the bug list and I will add it to the
 FAQ so that this document can be improved.  If you still don't find a
 suitable answer, consider posting the question to the bug lists.
 
+This master location of this document is available online at
+@uref{http://www.gnu.org/software/fileutils/doc/faq/core-utils-faq.html}.
+
 It is possible that replacing this document, or perhaps in addition to
 it, that we might implement a
 @uref{http://www.usenix.org/publications/login/1998-6/faq.html,FAQ-o-matic}
 type system.  I am interested in any comments you might have on this
 topic.
-
-This document is available online at
-@uref{http://www.gnu.org/software/fileutils/doc/faq/core-utils-faq.html}.
 
 This FAQ was written by Bob Proulx
 @uref{mailto:bob@@proulx.com,<bob@@proulx.com>} as an amalgamation of
@@ -284,18 +284,22 @@ did not get sent to the list in plain text format.
 @node I use the Cygwin port and I have a problem., Why can only root chown files?, I reported a bug but did not get a response., Top
 @chapter I use the Cygwin port and I have a problem.
 
-The hard work the Cygwin team has put in to porting the GNU utilities to
-Windows is greatly admired.  However the GNU team generally uses UNIX
-systems and do not have access to Cygwin systems.  Most of us can't
-help.  It would be most appreciated if you would make your bug report
-directly to the Cygwin folks.  They are the experts and best suited to
-handle the problem.
+The hard work the Cygwin team has put in to developing the GNU Project
+on Windows is greatly admired.  However the GNU team generally uses
+GNU Operating Systems and do not have access to Cygwin systems or
+MS-Windows systems which means that most of us can't help you.  It
+would be most appreciated if you would make your bug report directly
+to the Cygwin folks.  They are the experts and best suited to handle
+your problem.
 
 @table @uref
-@item http://sources.redhat.com/cygwin/
+@item http://cygwin.com/faq/
+Cygwin FAQ.  Most excellent!
+
+@item http://cygwin.com/
 Cygwin Home Page
 
-@item http://sources.redhat.com/cygwin/bugs.html
+@item http://cygwin.com/bugs.html
 Cygwin Bug Report Guidelines.  This is a good reference for general bug
 reporting.
 @end table
