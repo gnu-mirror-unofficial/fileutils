@@ -4,7 +4,7 @@
 @settitle GNU Core Utilities Frequently Asked Questions
 @c %**end of header
 
-@c $Revision: 1.11 $ $Date: 2002/02/10 04:55:27 $
+@c $Revision: 1.12 $ $Date: 2002/04/16 03:36:31 $
 
 @node Top, Three packages are confusing!, (dir), (dir)
 @top
@@ -14,20 +14,24 @@ Welcome to the GNU Core Utilities FAQ.  This document answers the most
 frequently asked questions about the core utilities of the GNU
 Operating System.
 
+This master location of this document is available online at
+@uref{http://www.gnu.org/software/fileutils/doc/faq/core-utils-faq.html}.
+
 If you have a question that is not answered in this FAQ then please
 check the mailing list archives.  If you find a useful question and
 answer please send a message to the bug list and I will add it to the
 FAQ so that this document can be improved.  If you still don't find a
 suitable answer, consider posting the question to the bug lists.
 
-This master location of this document is available online at
-@uref{http://www.gnu.org/software/fileutils/doc/faq/core-utils-faq.html}.
-
 It is possible that replacing this document, or perhaps in addition to
 it, that we might implement a
 @uref{http://www.usenix.org/publications/login/1998-6/faq.html,FAQ-o-matic}
 type system.  I am interested in any comments you might have on this
 topic.
+
+An excellent collection of FAQs is available by anonymous ftp at
+rtfm.mit.edu and in particular the unix faq is pertinent here.
+@uref{ftp://rtfm.mit.edu/pub/usenet/news.answers/unix-faq/faq/contents}
 
 This FAQ was written by Bob Proulx
 @uref{mailto:bob@@proulx.com,<bob@@proulx.com>} as an amalgamation of
@@ -80,6 +84,7 @@ An online version is available at
 * How do I change the ownership or permissions of a symlink?::
 * Value too large for defined data type::
 * Tar created a Large File but I can't remove it.::
+* The 'od -x' command prints bytes in the wrong order.::
 @end menu
 
 @c ---------------------------------------------------------------------------
@@ -1072,7 +1077,7 @@ See the next question if you have inadvertently created a large file and
 now need some way to deal with it.
 
 @c ---------------------------------------------------------------------------
-@node Tar created a Large File but I can't remove it.,  , Value too large for defined data type, Top
+@node Tar created a Large File but I can't remove it., The 'od -x' command prints bytes in the wrong order., Value too large for defined data type, Top
 @chapter Tar created a Large File but I can't remove it.
 
 I created a file with tar cvf backup.tar.  Trying to "rm" this file this
@@ -1118,6 +1123,48 @@ support large files.  Use that to your advantage to truncate the file.
 @example
   touch /tmp/junk
   tar cvf backup.tar /tmp/junk
+@end example
+
+@c ---------------------------------------------------------------------------
+@node  The 'od -x' command prints bytes in the wrong order.,  , Tar created a Large File but I can't remove it., Top
+@chapter The 'od -x' command prints bytes in the wrong order.
+
+That is the required behavior depending upon the endianess of the
+underlying machine.  You are probably mixing up words and bytes.
+
+The -x option outputs short integers, note integers which is a word
+and not a byte, in the machine's short integer format.  If you are
+operating on a little endian machine such as an x86 then the bytes
+appear in 'backwords' order.  Here is what the --help says.
+
+@example
+`-x'
+     Output as hexadecimal shorts.  Equivalent to `-tx2'.
+@end example
+
+If you require a specific byte ordering, note bytes not words, then
+you need to supply a byte specification such as 'od -t x1'.
+
+@example
+  echo abcdefgh > /tmp/letters
+  od -cx /tmp/letters
+  0000000   a   b   c   d   e   f   g   h  \n  \0
+          6261 6463 6665 6867 000a
+  0000011
+  od -t cx1 /tmp/letters
+  0000000   a   b   c   d   e   f   g   h  \n
+          61 62 63 64 65 66 67 68 0a
+  0000011
+@end example
+
+If you search the web for ``little endian big endian'' you should turn
+up many hits for various documentation on this subject.  But for sure
+you should read ``On Holy Wars and a Plea for Peace'' written by Danny
+Cohen and published in IEEE Computer years ago as it is a classic
+treatise on the subject.
+
+@example
+  @uref{http://www.op.net/docs/RFCs/ien-137}
 @end example
 
 @c ---------------------------------------------------------------------------

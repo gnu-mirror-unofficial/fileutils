@@ -21,20 +21,24 @@ Up:<a rel=up href="#(dir)">(dir)</a>
 frequently asked questions about the core utilities of the GNU
 Operating System.
 
+<p>This master location of this document is available online at
+<a href="http://www.gnu.org/software/fileutils/doc/faq/core-utils-faq.html">http://www.gnu.org/software/fileutils/doc/faq/core-utils-faq.html</a>.
+
 <p>If you have a question that is not answered in this FAQ then please
 check the mailing list archives.  If you find a useful question and
 answer please send a message to the bug list and I will add it to the
 FAQ so that this document can be improved.  If you still don't find a
 suitable answer, consider posting the question to the bug lists.
 
-<p>This master location of this document is available online at
-<a href="http://www.gnu.org/software/fileutils/doc/faq/core-utils-faq.html">http://www.gnu.org/software/fileutils/doc/faq/core-utils-faq.html</a>.
-
 <p>It is possible that replacing this document, or perhaps in addition to
 it, that we might implement a
 <a href="http://www.usenix.org/publications/login/1998-6/faq.html">FAQ-o-matic</a>
 type system.  I am interested in any comments you might have on this
 topic.
+
+<p>An excellent collection of FAQs is available by anonymous ftp at
+rtfm.mit.edu and in particular the unix faq is pertinent here. 
+<a href="ftp://rtfm.mit.edu/pub/usenet/news.answers/unix-faq/faq/contents">ftp://rtfm.mit.edu/pub/usenet/news.answers/unix-faq/faq/contents</a>
 
 <p>This FAQ was written by Bob Proulx
 <a href="mailto:bob@proulx.com">&lt;bob@proulx.com&gt;</a> as an amalgamation of
@@ -87,6 +91,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 <li><a href="#How%20do%20I%20change%20the%20ownership%20or%20permissions%20of%20a%20symlink%3f">How do I change the ownership or permissions of a symlink?</a>: 
 <li><a href="#Value%20too%20large%20for%20defined%20data%20type">Value too large for defined data type</a>: 
 <li><a href="#Tar%20created%20a%20Large%20File%20but%20I%20can't%20remove%20it.">Tar created a Large File but I can't remove it.</a>: 
+<li><a href="#The%20'od%20-x'%20command%20prints%20bytes%20in%20the%20wrong%20order.">The 'od -x' command prints bytes in the wrong order.</a>: 
 </ul>
 
 <p><hr>
@@ -1164,6 +1169,7 @@ now need some way to deal with it.
 
 <p><hr>
 Node:<a name="Tar%20created%20a%20Large%20File%20but%20I%20can't%20remove%20it.">Tar created a Large File but I can't remove it.</a>,
+Next:<a rel=next href="#The%20'od%20-x'%20command%20prints%20bytes%20in%20the%20wrong%20order.">The 'od -x' command prints bytes in the wrong order.</a>,
 Previous:<a rel=previous href="#Value%20too%20large%20for%20defined%20data%20type">Value too large for defined data type</a>,
 Up:<a rel=up href="#Top">Top</a>
 <br>
@@ -1209,6 +1215,49 @@ support large files.  Use that to your advantage to truncate the file.
 
 <pre>  touch /tmp/junk
   tar cvf backup.tar /tmp/junk
+</pre>
+
+<p><hr>
+Node:<a name="The%20'od%20-x'%20command%20prints%20bytes%20in%20the%20wrong%20order.">The 'od -x' command prints bytes in the wrong order.</a>,
+Previous:<a rel=previous href="#Tar%20created%20a%20Large%20File%20but%20I%20can't%20remove%20it.">Tar created a Large File but I can't remove it.</a>,
+Up:<a rel=up href="#Top">Top</a>
+<br>
+
+<h1>The 'od -x' command prints bytes in the wrong order.</h1>
+
+<p>That is the required behavior depending upon the endianess of the
+underlying machine.  You are probably mixing up words and bytes.
+
+<p>The -x option outputs short integers, note integers which is a word
+and not a byte, in the machine's short integer format.  If you are
+operating on a little endian machine such as an x86 then the bytes
+appear in 'backwords' order.  Here is what the -help says.
+
+<pre>`-x'
+     Output as hexadecimal shorts.  Equivalent to `-tx2'.
+</pre>
+
+<p>If you require a specific byte ordering, note bytes not words, then
+you need to supply a byte specification such as 'od -t x1'.
+
+<pre>  echo abcdefgh &gt; /tmp/letters
+  od -cx /tmp/letters
+  0000000   a   b   c   d   e   f   g   h  \n  \0
+          6261 6463 6665 6867 000a
+  0000011
+  od -t cx1 /tmp/letters
+  0000000   a   b   c   d   e   f   g   h  \n
+          61 62 63 64 65 66 67 68 0a
+  0000011
+</pre>
+
+<p>If you search the web for "little endian big endian" you should turn
+up many hits for various documentation on this subject.  But for sure
+you should read "On Holy Wars and a Plea for Peace" written by Danny
+Cohen and published in IEEE Computer years ago as it is a classic
+treatise on the subject.
+
+<pre>  <a href="http://www.op.net/docs/RFCs/ien-137">http://www.op.net/docs/RFCs/ien-137</a>
 </pre>
 
 </body></html>
