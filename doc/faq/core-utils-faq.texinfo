@@ -4,7 +4,7 @@
 @settitle GNU Core Utilities Frequently Asked Questions
 @c %**end of header
 
-@c $Revision: 1.3 $ $Date: 2001/12/04 09:24:21 $
+@c $Revision: 1.4 $ $Date: 2001/12/05 17:27:19 $
 
 @node Top, Three packages are confusing!, (dir), (dir)
 @top
@@ -49,30 +49,30 @@ An online version is available at
 @uref{http://www.gnu.org/licenses/licenses.html}.
 
 @menu
-* Three packages are confusing!::  
-* Where can I get more information about GNU Core Utils?::  
-* Where can I get the latest version of GNU fileutils?::  
-* How do I add a question to the FAQ?::  
-* How do I report a bug?::      
-* I use the Cygwin port and I have a problem.::  
-* Why can only root chown files?::  
-* chown fails when the username contains a '.' in it.::  
-* How do I remove files that start with a '-' such as '-i'?::  
-* I have a file called '--help'::  
-* I have a file '-f' and it affects rm.::  
-* Why doesn't rm -r *.pattern recurse like it should?::  
-* Why don't the utilities have built in directory recursion?::  
-* ls -d does not list directories!::  
-* Argument list too long::      
-* I am trying to compile a C program ...::  
-* I am having a problem with kill::  
-* Sort does not sorting in normal order!::  
-* The ls command is not listing files in a normal order!::  
-* The date command is not working right.::  
-* ln -s did not link my files together::  
-* How do I change the ownership or permissions of a symlink?::  
-* Value too large for defined data type::  
-* Tar created a Large File but I can't remove it.::  
+* Three packages are confusing!::
+* Where can I get more information about GNU Core Utils?::
+* Where can I get the latest version of GNU fileutils?::
+* How do I add a question to the FAQ?::
+* How do I report a bug?::
+* I use the Cygwin port and I have a problem.::
+* Why can only root chown files?::
+* chown fails when the username contains a '.' in it.::
+* How do I remove files that start with a '-' such as '-i'?::
+* I have a file called '--help'::
+* I have a file '-f' and it affects rm.::
+* Why doesn't rm -r *.pattern recurse like it should?::
+* Why don't the utilities have built in directory recursion?::
+* ls -d does not list directories!::
+* Argument list too long::
+* I am trying to compile a C program ...::
+* I am having a problem with kill::
+* Sort does not sorting in normal order!::
+* The ls command is not listing files in a normal order!::
+* The date command is not working right.::
+* ln -s did not link my files together::
+* How do I change the ownership or permissions of a symlink?::
+* Value too large for defined data type::
+* Tar created a Large File but I can't remove it.::
 @end menu
 
 @c ---------------------------------------------------------------------------
@@ -584,7 +584,7 @@ attributes of the current directory.
 
 But I expected to see all of the directories.
 
-That would be the output of 'ls -l' without the -d option.  
+That would be the output of 'ls -l' without the -d option.
 
 The -d option is meant to prevent ls from listing the contents of
 directories when you only wnat it to list the names of the
