@@ -4,7 +4,7 @@
 @settitle GNU Core Utilities Frequently Asked Questions
 @c %**end of header
 
-@c $Revision: 1.18 $ $Date: 2002/11/03 01:36:12 $
+@c $Revision: 1.19 $ $Date: 2003/04/01 06:42:59 $
 
 @node Top
 @top
@@ -37,7 +37,7 @@ This FAQ was written by Bob Proulx
 @uref{mailto:bob@@proulx.com,<bob@@proulx.com>} as an amalgamation of
 the many questions asked and answered on the bug lists.
 
-Copyright (C) 2001, 2002 Free Software Foundation
+Copyright (C) 2001, 2002, 2003 Free Software Foundation
 
 This document is free documentation; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as published
@@ -77,7 +77,7 @@ An online version is available at
 * Argument list too long::
 * I am trying to compile a C program ...::
 * I am having a problem with kill::
-* Sort does not sorting in normal order!::
+* Sort does not sort in normal order!::
 * The ls command is not listing files in a normal order!::
 * The date command is not working right.::
 * ln -s did not link my files together::
@@ -980,8 +980,8 @@ However, those utilities are also built into most shells in order to
 improve the speed performance.
 
 @c ---------------------------------------------------------------------------
-@node Sort does not sorting in normal order!
-@chapter Sort does not sorting in normal order!
+@node Sort does not sort in normal order!
+@chapter Sort does not sort in normal order!
 
 This one question arises almost more often than any other.  It is due to
 a very popular Linux distribution setting LANG=en_US in your user
