@@ -4,13 +4,13 @@
 @settitle GNU Core Utilities Frequently Asked Questions
 @c %**end of header
 
-@c $Revision: 1.4 $ $Date: 2001/12/05 17:27:19 $
+@c $Revision: 1.5 $ $Date: 2002/01/14 01:49:06 $
 
 @node Top, Three packages are confusing!, (dir), (dir)
 @top
 @chapter GNU Core Utilities Frequently Asked Questions
 
-Welcome to the GNU Core Utililities FAQ.  This document answers the most
+Welcome to the GNU Core Utilities FAQ.  This document answers the most
 frequently asked questions about the GNU core utilities.
 
 If you have a question that is not answered in this FAQ then please
@@ -146,7 +146,7 @@ Otherwise known as @uref{mailto:bug-textutils@@gnu.org,
 Utilities.
 @end table
 
-Whew!  Now that we have all of the enurations over with we can refer to
+Whew!  Now that we have all of the enumerations over with we can refer to
 these solely by the combined name of GNU Core Utilities.  But perhaps I
 will still slip and refer to one or the other at times.  If I do, please
 forgive me and make do.
@@ -211,7 +211,7 @@ repeats.
 
 If you think you have a real bug then send mail to the bug discussion
 list.  Use a subject that is descriptive of the issue.  Think of how
-difficultit is to follow a thread of discussion when every subject line
+difficult it is to follow a thread of discussion when every subject line
 is simply @strong{bug}.
 
 Good examples:
@@ -276,7 +276,7 @@ differently.  Traditional System V UNIX systems allow anyone to give a
 file away to other owners.  On those systems GNU chown does change the
 ownership of files.
 
-But on most modern systems BSD symantics are followed and only the
+But on most modern systems BSD semantics are followed and only the
 superuser can change the ownership of the file.  The problem for
 documenting this is that GNU chown does not know which it will be
 running on.  It could be one or it could be the other.  Or it might even
@@ -296,7 +296,7 @@ situations that only the superuser could fix.  Such as creating a
 non-writable directory of files and then giving the ownership away.
 Since they no longer own the files they can't change them, nor can they
 remove them.  This is commonly a problem when untaring files that other
-people created with restrictive file permisions.  The new semantics
+people created with restrictive file permissions.  The new semantics
 avoid this problem entirely.  Therefore most systems today have been
 changed to disallow giving file ownership away.  But as noted it has not
 always been that way.
@@ -530,7 +530,7 @@ simple and modular.  Common behavior should be modularized into a common
 location where it can be used by other programs.  More complicated
 programs are created by chaining together simpler programs.
 
-Here is an example of the unix philosophy in action.  Let's say you only
+Here is an example of the UNIX philosophy in action.  Let's say you only
 want to restrict directory listings to only show directories.  The
 normal thing would be to use a combination of commands.  This will do
 what you want.
@@ -544,7 +544,7 @@ sh have ^ as being special, a synonym for |, and you would have to quote
 it, this will generate the full listing and the grep would only show you
 the lines starting with 'd'.  Those are the directories.  Doing this
 type of command chaining is a very typical way of doing things under
-unix.
+UNIX.
 
 When people find that particular combinations of commands are ones
 that they use a lot then they will typically create a shell script, a
@@ -561,15 +561,15 @@ File lsdir:
 
 You could call it whatever you desired.  Then it would work just like
 ls but with your special behavior.  For all intents and purposes it
-would be just like a normal unix command and its output could be piped
+would be just like a normal UNIX command and its output could be piped
 into other commands.
 
 @c Do I really want to recommend a book in an FAQ?
 @c You might like this book.  It is not the best book and so I can only
-@c recommend it sparingly.  But it does capture the philosophy of unix
+@c recommend it sparingly.  But it does capture the philosophy of UNIX
 @c well.  The Unix Philosophy by Gancarz.  It is pretty good.  It won't
 @c help you with commands like ls.  But it will point you in the right
-@c direction of the spirit of unix.
+@c direction of the spirit of UNIX.
 
 @c ---------------------------------------------------------------------------
 @node  ls -d does not list directories!, Argument list too long, Why don't the utilities have built in directory recursion?, Top
@@ -587,7 +587,7 @@ But I expected to see all of the directories.
 That would be the output of 'ls -l' without the -d option.
 
 The -d option is meant to prevent ls from listing the contents of
-directories when you only wnat it to list the names of the
+directories when you only want it to list the names of the
 directories.
 
 To understand the usefulness of the -d option try this example.
@@ -601,7 +601,7 @@ option versus when you do not.
 
 If you are trying to find files in the directory hierarchy then you
 should look into using the @command{find} command.  It is very powerful
-and contains an interface which can be used with many other progams.
+and contains an interface which can be used with many other programs.
 
 @example
   info find
@@ -616,7 +616,7 @@ I tried to move about 5000 files with mv, but it said:
   bash: /bin/mv: Argument list too long
 @end example
 
-The UNIX operating system tradionally has a fixed limit for the amount
+The UNIX operating system traditionally has a fixed limit for the amount
 of memory that can be used for a program environment and argument list
 combined.  You can use getconf to return that limit.  On my Linux system
 (2.2.12) that amount is 128k.  On my HP-UX system (11.0) that amount is
@@ -637,7 +637,7 @@ operating systems.  It cannot exceed the OS limit of ARG_MAX and if it
 tries to do so the error "Argument list too long" is returned to the
 shell and the shell returns it to you.
 
-This is not a bug in 'mv' or other utilitities nor is it a bug in 'bash'
+This is not a bug in 'mv' or other utilities nor is it a bug in 'bash'
 or any other shell.  It is an architecture limitation of UNIX-like
 operating systems.  The 'mv' program was prevented by the OS from
 running and the shell is just the one in the middle reporting the
@@ -770,7 +770,7 @@ This one question arises almost more often than any other.  It is due to
 a very popular Linux distribution setting LANG=en_US in your user
 environment without your knowledge.  At that point sort appears broken.
 But once specifically requested by LANG and others like LC_* variables,
-sort and other locale knowledgable programs @strong{must} respect that
+sort and other locale knowledgeable programs @strong{must} respect that
 setting and sort according to the operating system locale tables.
 
 Of course those tables are a blessing to non-english speaking computer
@@ -781,7 +781,7 @@ specify a specific ordering.  This can be done by a translator well
 after the program has been written and by translators not known by the
 program author.  It is a dynamic change to the program.  However, when
 those tables are incorrect it can also break a perfectly correct
-program.  When locale tables are broken this is most noticable with the
+program.  When locale tables are broken this is most noticeable with the
 sort command so it bears the full force of the problem.
 
 Here is the standard mailing list reply on this topic.
@@ -818,7 +818,7 @@ variables with regards to sort.
 
 This is just a variant of the previous question.  Any program that is
 compliant with the standards and implements locale based collating
-sequences to support non-ascii languages will be affected.
+sequences to support non-ASCII languages will be affected.
 
 See the standards documentation for more information on the locale
 variables with regards to ls.
@@ -851,7 +851,7 @@ time at that file was created.  The owner, group and mode of a symlink
 are not significant to file access through it.
 
 Symbolic links may use either absolute or relative paths but there are
-tradeoffs.  Generally I advocate making only relative links so that
+trade offs.  Generally I advocate making only relative links so that
 the location is network independent and will work desirably across NFS
 mounted filesystems.
 
@@ -899,10 +899,10 @@ Instead of "long" they use a new data type called "off_t" which is
 constructed to be 64-bits in size.  Program source code must be written
 to use the off_t data type instead of the long data type.  This is
 typically done by defining -D_FILE_OFFSET_BITS=64 or some such.  It is
-stysem dependent.  Once done and once switched into this new mode most
+system dependent.  Once done and once switched into this new mode most
 programs will support large files just fine.
 
-See the next question if you have inadvertantly created a large file and
+See the next question if you have inadvertently created a large file and
 now need some way to deal with it.
 
 @c ---------------------------------------------------------------------------
