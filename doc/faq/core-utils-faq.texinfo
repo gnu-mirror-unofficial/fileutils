@@ -4,14 +4,15 @@
 @settitle GNU Core Utilities Frequently Asked Questions
 @c %**end of header
 
-@c $Revision: 1.10 $ $Date: 2002/02/09 19:38:29 $
+@c $Revision: 1.11 $ $Date: 2002/02/10 04:55:27 $
 
 @node Top, Three packages are confusing!, (dir), (dir)
 @top
 @chapter GNU Core Utilities Frequently Asked Questions
 
 Welcome to the GNU Core Utilities FAQ.  This document answers the most
-frequently asked questions about the GNU core utilities.
+frequently asked questions about the core utilities of the GNU
+Operating System.
 
 If you have a question that is not answered in this FAQ then please
 check the mailing list archives.  If you find a useful question and
@@ -58,7 +59,7 @@ An online version is available at
 * How do I add a question to the FAQ?::
 * How do I report a bug?::
 * I reported a bug but did not get a response.::
-* I use the Cygwin port and I have a problem.::
+* I use the Cygwin toolset and I have a problem.::
 * Why can only root chown files?::
 * chown fails when the username contains a '.' in it.::
 * How do I remove files that start with a '-' such as '-i'?::
@@ -263,7 +264,7 @@ not feel comfortable at the source code level reports of bugs are always
 welcome.
 
 @c ---------------------------------------------------------------------------
-@node  I reported a bug but did not get a response., I use the Cygwin port and I have a problem., How do I report a bug?, Top
+@node  I reported a bug but did not get a response., I use the Cygwin toolset and I have a problem., How do I report a bug?, Top
 @chapter I reported a bug but did not get a response.
 
 It may just be that the volunteers are busy.  Please be patient.  Every
@@ -281,8 +282,8 @@ deciphered.  If it does not show up as plain text in the archive then it
 did not get sent to the list in plain text format.
 
 @c ---------------------------------------------------------------------------
-@node I use the Cygwin port and I have a problem., Why can only root chown files?, I reported a bug but did not get a response., Top
-@chapter I use the Cygwin port and I have a problem.
+@node I use the Cygwin toolset and I have a problem., Why can only root chown files?, I reported a bug but did not get a response., Top
+@chapter I use the Cygwin toolset and I have a problem.
 
 The hard work the Cygwin team has put in to developing the GNU Project
 on Windows is greatly admired.  However the GNU team generally uses
@@ -293,11 +294,11 @@ to the Cygwin folks.  They are the experts and best suited to handle
 your problem.
 
 @table @uref
-@item http://cygwin.com/faq/
-Cygwin FAQ.  Most excellent!
-
 @item http://cygwin.com/
 Cygwin Home Page
+
+@item http://cygwin.com/faq/
+Cygwin FAQ.  Most excellent!
 
 @item http://cygwin.com/bugs.html
 Cygwin Bug Report Guidelines.  This is a good reference for general bug
@@ -305,7 +306,7 @@ reporting.
 @end table
 
 @c ---------------------------------------------------------------------------
-@node Why can only root chown files?, chown fails when the username contains a '.' in it., I use the Cygwin port and I have a problem., Top
+@node Why can only root chown files?, chown fails when the username contains a '.' in it., I use the Cygwin toolset and I have a problem., Top
 @chapter Why can only root chown files?
 
 The GNU chown program will change the ownership if the operating system
